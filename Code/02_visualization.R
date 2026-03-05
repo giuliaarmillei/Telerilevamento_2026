@@ -70,4 +70,11 @@ plot(b3, col=inferno(100))
 plot(b4, col=inferno(100))
 plot(b8, col=inferno(100))
 
-
+sentinel <- c(b2, b3, b4, b8)
+plot(sentinel)
+plot(sentinel, col=inferno(100))
+names(sentinel)
+plot(sentinel$sentinel.dolomites.b8)
+#layer1=b2, layer2=b3, layer30b4, layer4=b8
+plot(sentinel[[1]])
+plot(sentinel[[4]])
