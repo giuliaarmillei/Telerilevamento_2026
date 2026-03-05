@@ -9,8 +9,9 @@ library(viridis)
 #listing data
 im.list()
 
-#importing images
+#importing images: b2 è la banda del 2
 b2 <- im.import("sentinel.dolomites.b2.tif")
+plot(b2)
 
 #changing color
 cl <- colorRampPalette(c("darkgoldenrod", "brown", "gold"))(100)
@@ -37,5 +38,36 @@ plot(b2, col=inferno(100))
 plot(b2, col=cl)
 
 dev.off()
+
+#importing band 3 (=banda del verde)
+b3 <- im.import("sentinel.dolomites.b3.tif")
+plot(b3)
+
+#esercizio: chanfe the ramp palette according to the viridis package
+plot(b3, col=plasma(100))
+
+#importing band 4 (banda del rosso)
+b4 <- im.import("sentinel.dolomites.b4.tif")
+plot(b4)
+
+#importing band 8
+b8 <- im.import("sentinel.dolomites.b8.tif")
+plot(b8)
+
+#esercizio: multiframe with four bands, legends: in line with the wavelenght
+par(mfrow=c(2,2))
+cl2 <- colorRampPalette(c("darkblue", "blue", "lightblue"))(100)
+cl3 <- colorRampPalette(c("darkgreen", "forestgreen", "lightgreen"))(100)
+cl4 <- colorRampPalette(c("darkred", "red1", "tomato1"))(100)
+cl8 <- colorRampPalette(c("violetred4", "violetred", "violetred1"))(100)
+plot(b2, col=cl2)
+plot(b3, col=cl3)
+plot(b4, col=cl4)
+plot(b8, col=cl8)
+
+plot(b2, col=inferno(100))
+plot(b3, col=inferno(100))
+plot(b4, col=inferno(100))
+plot(b8, col=inferno(100))
 
 
