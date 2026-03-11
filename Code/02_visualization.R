@@ -125,5 +125,21 @@ p1 + p2
 #layer 3 = b4 = red
 #layer 4 = b8 = infrarosso (NIR)
 
-im.plotRGB(sentinel, r=3, g=2, b=1)
-im.plotRGB(sentinel, r=4, g=3, b=2)
+im.plotRGB(sentinel, r=3, g=2, b=1) #senza infrarosso --> natural colors
+im.plotRGB(sentinel, r=4, g=3, b=2) #con infrarosso --> false colors
+im.plotRGB(sentinel, r=3, g=4, b=2) #false colors
+im.plotRGB(sentinel, r=2, g=4, b=3) #false colors
+im.plotRGB(sentinel, r=2, g=3, b=4) #false colors
+
+#correlations
+pairs(sentinel)
+
+#plotting in RGB via terra
+plotRGB(sentinel, r=4, g=3, b=2, stretch="lin")
+plotRGB(sentinel, r=4, g=3, b=2, stretch="hist")
+par(mfrow=c(1,2))
+
+#simplify your code: nella funzione posso mettere direttamente i numeri in fila corrispondenti alle componenti r, g, b
+im.plotRGB(sentinel, 3, 4, 2)
+
+
