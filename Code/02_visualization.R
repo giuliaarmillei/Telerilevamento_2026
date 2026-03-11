@@ -5,6 +5,10 @@ library(imageRy)
 
 install.packages("viridis")
 library(viridis)
+
+library(ggplot2)
+install.packages("patchwork")
+libraru(patchwork)
   
 #listing data
 im.list()
@@ -70,6 +74,7 @@ plot(b3, col=inferno(100))
 plot(b4, col=inferno(100))
 plot(b8, col=inferno(100))
 
+#stack
 sentinel <- c(b2, b3, b4, b8)
 plot(sentinel)
 plot(sentinel, col=inferno(100))
@@ -82,3 +87,43 @@ plot(sentinel[[1]])
 plot(sentinel[[4]])
 
 install.packages("ggplot2")
+
+
+#importo la banda del blu
+b2 <- im.import("sentinel.dolomites.b2.tif")
+b3 <- im.import("sentinel.dolomites.b3.tif")
+b4 <- im.import("sentinel.dolomites.b4.tif")
+b8 <- im.import("sentinel.dolomites.b8.tif")
+#creo uno stack
+sentinel <- c(b2, b3, b4, b8)
+
+#layer 1 = b2 = blue
+#layer 2 = b3 = green
+#layer 3 = b4 = red
+#layer 4 = b8 = infrarosso (NIR)
+
+#una volta creato lo stack dei 4 layer che rappresentano le 4 bande posso fare il plot delle 4 bande tutte insieme
+plot(sentinel)
+#per plottare una sola delle bande:
+plot(sentinel[[4]])
+
+#quarto metodo con ggplot2
+p1 <- im.ggplot(b8)
+p2 <- im.ggplot(b4)
+p1 + p2
+
+# Multiframe:
+# 1. par(mfrow=c(1,2))
+# 2. im.multiframe(1,2)
+# 3. stack
+# 4. ggplot2 patchwork
+
+#plotting by RGB schemes
+
+#layer 1 = b2 = blue
+#layer 2 = b3 = green
+#layer 3 = b4 = red
+#layer 4 = b8 = infrarosso (NIR)
+
+im.plotRGB(sentinel, r=3, g=2, b=1)
+im.plotRGB(sentinel, r=4, g=3, b=2)
