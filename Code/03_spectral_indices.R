@@ -25,3 +25,10 @@ im.plotRGB(mato1992, r=1, g=2, b=3)
 
 im.plotRGB(mato1992, r=2, g=3, b=1)
 im.plotRGB(mato2006, r=2, g=3, b=1)
+
+#DVI
+#ipotizziamo una riflettanza della pianta da 0 a 100
+#NIR=100 red=0
+# indice dvi = NIR - red = 100 - 0 = massimo dvi di una pianta
+#se una pianta va in sofferenza cala molto il NIR e il rosso non viene assorbito con la fotosintesi e quindi aumenta la riflettanza
+#dvi_t1 = 40 - 10 = 30
