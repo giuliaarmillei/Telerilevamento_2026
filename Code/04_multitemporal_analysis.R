@@ -29,7 +29,16 @@ g2015 <- im.import("greenland.2015.tif")
 sg <- c(g2000, g2005, g2010, g2015)
 
 gr <- im.import("greenland")
+
 par(mfrow=c(1,2))
 plot(gr[[1]], col=plasma(100))
 plot(gr[[4]], col=plasma(100))
+
+#differenza
+dif <- gr[[4]] - gr[[1]]
+dev.off()
+plot(dif)
+
+#RGB
+im.plotRGB(gr, r=1, g=2, b=4)
 
