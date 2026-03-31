@@ -57,3 +57,26 @@ im.ridgeline(ndvi, scale=1, palette="viridis")
 names(ndvi) <- c("02_fev", "05_may", "08_aug", "11_nov")
 im.ridgeline(ndvi, scale=1, palette="viridis")
 
+#pairs
+pairs(ndvi)
+
+plot(ndvi[[1]], ndvi[[2]])
+
+# y = a + bx
+# y = x
+#a = 0    b=1
+
+#insert the line x=y
+abline(0, 1)
+
+plot(ndvi[[1]], ndvi[[2]], xlim=c(-0.3,0.9), ylim=c(-0.3,0.9))
+abline(0, 1)
+
+
+
+
+
+
+
+
+
