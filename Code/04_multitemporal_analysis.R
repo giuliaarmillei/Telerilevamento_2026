@@ -1,6 +1,9 @@
 library(terra)
 library(imageRy)
 library(viridis)
+library(ggplot2)
+install.packages("ggridges")
+library(ggridges)
 
 im.list()
 EN_01 <- im.import("EN_01.png"))
@@ -41,4 +44,16 @@ plot(dif)
 
 #RGB
 im.plotRGB(gr, r=1, g=2, b=4)
+
+# NDVI data
+ndvi <- im.import("Sentinel2_NDVI_2020")
+
+#istogramma
+hist(ndvi)
+
+#ridgeline plotting
+im.ridgeline(ndvi, scale=1, palette="viridis")
+
+names(ndvi) <- c("02_fev", "05_may", "08_aug", "11_nov")
+im.ridgeline(ndvi, scale=1, palette="viridis")
 
