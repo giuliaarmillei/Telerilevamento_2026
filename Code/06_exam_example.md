@@ -16,3 +16,25 @@ i dati sono stati scaricati da Earth Observatory: https://science.nasa.gov/earth
 oppure
 
 i dati sono stati scaricati da [Earth Observatory](https://science.nasa.gov/earth/earth-observatory/eyeing-the-richat-structure/)
+
+
+
+
+
+
+
+
+
+## Analisi esplorativa 
+plottaggio di singole bande
+
+
+
+
+
+
+
+
+
+
+
