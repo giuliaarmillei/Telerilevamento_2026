@@ -2,11 +2,16 @@
 
 in questa riga scrivo l'intro alle mie analisi
 
+Inserisco un'immagine generica:
+<img width="275" height="183" alt="maurit" src="https://github.com/user-attachments/assets/1b8dba38-b263-43c3-be33-9dd619c98abc" />
+
+
 ## Pacchetti utilizzati
 per questo esame ho usato ... pacchetti: 
 ```r
 
 library(terra)
+library(imageRy)
 
 ```
 
@@ -42,6 +47,22 @@ plot(richat[[2]])
 
 questo è l'output dell'analisi
 <img width="480" height="480" alt="bande" src="https://github.com/user-attachments/assets/4ec48ab3-f277-4d6c-af11-621c53c174e8" />
+
+per fare un elenco puntato uso la +:
++ primo punto
++ secondo punto
++ terzo punto
+
+istogrammi dell'immagine:
+```r
+par(mfrow=c(3,1))
+hist(values(richat[[1]]), main="Istogramma Red", col="red")
+hist(values(richat[[2]]), main="Istogramma Green", col="green")
+hist(values(richat[[3]]), main="Istogramma Blue", col="blue")
+```
+
+questo è l'output:
+<img width="480" height="480" alt="ist" src="https://github.com/user-attachments/assets/e3d172b2-65b5-40f5-aa75-754cce576161" />
 
 
 
