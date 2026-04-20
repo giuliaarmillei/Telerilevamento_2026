@@ -17,12 +17,13 @@ plot(richat)
 dev.off()
 
 #plottaggio delle singole bande
-par(mfrow=c(1,2))
+par(mfrow=c(2,1))
 plot(richat[[1]])
 plot(richat[[2]])
 
 png("bande.png")
-par(mfrow=c(1,2))
+par(mfrow=c(2,1))
 plot(richat[[1]])
 plot(richat[[2]])
 dev.off()
+
