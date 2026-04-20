@@ -16,3 +16,16 @@ i dati sono stati scaricati da Earth Observatory: https://science.nasa.gov/earth
 oppure 
 
 i dati sono stati scaricati da [Earth Observatory](https://science.nasa.gov/earth/earth-observatory/eyeing-the-richat-structure/)
+
+Il codice utilizzato è il seguente. Prima di tutto selezioniamo la working directory:
+```r
+setwd("C:/Users/Giulia/Downloads/drone")
+getwd()
+list.files()
+```
+per importare i dati è stata usata la funzione `rast()` del pacchetto `terra`:
+```r
+richat <- rast("richatstructure_oli_20260306.jpg")
+richat <- flip(richat)
+plot(richat)
+```
