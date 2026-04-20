@@ -29,3 +29,21 @@ richat <- rast("richatstructure_oli_20260306.jpg")
 richat <- flip(richat)
 plot(richat)
 ```
+
+<img width="480" height="480" alt="figurarichat" src="https://github.com/user-attachments/assets/4da4c546-21d0-4f3d-9016-accba7ded33c" />
+
+## Analisi esplorativa: plottaggio delle singole bande
+Le singole bande sono state plottate usando un multiframe:
+```r
+par(mfrow=c(2,1))
+plot(richat[[1]])
+plot(richat[[2]])
+```
+
+questo è l'output dell'analisi
+<img width="480" height="480" alt="bande" src="https://github.com/user-attachments/assets/4ec48ab3-f277-4d6c-af11-621c53c174e8" />
+
+
+
+
+
