@@ -118,3 +118,4 @@ p2 <- ggplot(tabout, aes(x=class, y=perc2006, color=class)) + # structure
  
 p1 + p2
 
+
