@@ -2,6 +2,8 @@
 
 library(terra)
 library(imageRy)
+library(ggplot2)
+library(patchwork)
 
 #usiamo le immagini di terra. Listing files:
 im.list()
@@ -88,6 +90,21 @@ tabout <- data.frame(
   perc1992=c(83, 17),
   perc2006=c(45, 55)
   )
+
+ggplot(tabout, aes(x=class, y=perc1992, color=class)) + # structure
+ geom_bar(stat="identity", fill="white")
+
+#Exercise: plot the bars of 2006
+ggplot(tabout, aes(x=class, y=perc2006, color=class)) + # structure
+ geom_bar(stat="identity", fill="white")
+
+# Using patchwork --> associo i due grafici a due oggetti, ad esempio p1 e p2
+p1 <- ggplot(tabout, aes(x=class, y=perc1992, color=class)) + 
+ geom_bar(stat="identity", fill="white")
+p2 <- ggplot(tabout, aes(x=class, y=perc2006, color=class)) + 
+ geom_bar(stat="identity", fill="white")
+
+p1 + p2
 
 
 
