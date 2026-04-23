@@ -106,5 +106,15 @@ p2 <- ggplot(tabout, aes(x=class, y=perc2006, color=class)) +
 
 p1 + p2
 
+p1 <- ggplot(tabout, aes(x=class, y=perc1992, color=class)) + # structure
+ geom_bar(stat="identity", fill="white") + #bar plot
+ ylim(c(0,100)) + # limits asse y
+ theme(legend.position="none") # removing legend
 
+p2 <- ggplot(tabout, aes(x=class, y=perc2006, color=class)) + # structure
+ geom_bar(stat="identity", fill="white") + #bar plot
+ ylim(c(0,100)) + # limits asse y
+ theme(legend.position="none") # removing legend
+ 
+p1 + p2
 
