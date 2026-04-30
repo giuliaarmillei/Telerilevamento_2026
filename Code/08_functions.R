@@ -51,5 +51,7 @@ loop2 <- function() {
     }
   }
 
-
-
+sent <- im.import("Sentinel2_NDVI_2020-11-27.tif")
+mf(1,2)
+plot(sent)
+plot(sent)
