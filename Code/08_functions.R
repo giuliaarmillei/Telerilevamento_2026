@@ -23,7 +23,7 @@ mf2 <- function(nx=1, ny=2){
 
 # if else: se --> allora = è una funzione con messaggio che noi definiiamo. positivo(6) --> "Questo numero è positivo"
 
-positivo <- function(x){
+numero <- function(x){
   if(x>0) {
     "Questo numero è positivo"
     }
