@@ -16,7 +16,6 @@ list.files()
 pre <- rast("Preincendio_luglio2022.tif")
 plot(pre)
 
-
 # Importazione e visualizzazione delle bande spettrali agosto 2022 
 post <- rast("Postincendio_agosto2022.tif")
 plot(post)
