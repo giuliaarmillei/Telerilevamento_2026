@@ -175,6 +175,8 @@ dev.off()
 ```
 <img width="480" height="480" alt="ndvi" src="https://github.com/user-attachments/assets/f8bf5185-7207-4276-9ae9-b50139085a4b" />
 
+
+
 Il confronto degli indici pre e post incendio mostra una diminuzione dei valori nelle aree percorse dal fuoco, evidenziando la perdita di copertura vegetale e di attività fotosintetica. 
 
 ### Analisi multitemporale della distribuzione dell'NDVI mediante ridgeline plot
@@ -196,7 +198,7 @@ im.ridgeline(stack_ndvi, scale = 1, palette = "inferno")
 
 Dopo l'incendio si osserva uno spostamento della distribuzione verso valori più bassi di NDVI e, nello specifico, a una diminuzione della densità dei valori elevati e l'aumento della densità di valori bassi. Questo è associato alla perdita di biomasa vegetale e alla riduzione della capacità fotosintetica della vegetazione danneggiata dal fuoco.
 
-###
+
 
 
 
