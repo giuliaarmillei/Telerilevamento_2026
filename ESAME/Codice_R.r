@@ -41,7 +41,19 @@ plot(post[[3]], col = magma(100), main = "Post-incendio, B4")
 plot(post[[4]], col = magma(100), main = "Post-incendio, B8")
 dev.off()
 
+# Visualizzazione a falsi colori??
 
+# Analisi DVI
+
+# calcolo indici con funzione im.dvi del pacchetto imageRy
+dvi_pre <- im.dvi(pre, 4, 3)
+dvi_post <- im.dvi(post, 4, 3)
+
+# visualizzazione indici pre il confronto temporale
+im.multiframe(1,2) #suddivisione della finestra grafica in 1 riga e 2 colonne
+plot(dvi_pre, col = cividis(100), main = "DVI luglio 2022")
+plot(dvi_post, col = cividis(100), main = "DVI agosto 2022")
+dev.off()
 
 
 
