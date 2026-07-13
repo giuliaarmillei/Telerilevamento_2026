@@ -111,6 +111,7 @@ La visualizzazione separata delle bande del visibile (blu, verde e rosso) e dall
 
 ### Visualizzazione immagini a falsi colori
 
+???
 
 ### Analisi DVI
 
@@ -149,7 +150,17 @@ plot(dvi_diff, col = cividis(100), main = "Differenza DVI pre-post incendio")
 La differenza tra gli indici DVI pre e post incendio, permette di evidenziare spazialemente le aree maggiormente colpite dal passaggio del fuoco e caratterizzate dalla maggior perdita di attività fotosintetica, in corrispondenza di valori negativi-
 
 ### Analisi NDVI
-cos'è e come si calcola e funzione usata in R
+
+Il **Normalized Difference Vegetation Index (NDVI)** è uno degli indici di vegetaione più utilizzati nell'ambito del telerilevamento per valutare lo stato e il vigore della copertura vegetale. Come per il DVI, si basa sulle caratteristiche spettrali della vegetazione, che assorbe la radiazione nella banda del rosso e riflette invece le radiazioni nel vicino infrarosso. 
+A differenza del DVI, però, l'NDVI è un indice normalizzato che assomu valori compresi tra -1 e +1:
+
+**$NDVI = \frac{NIR - Red}{NIR + Red}$**
+
+* Valori prossimi a +1 indicano una vegetazione densa, sana e caratterizzata da elevata attività fotosintetica
+* Valori intorno allo 0 sono associati a vegetazione rada, arbustiva o a suoli privi di vegetazione
+* Valori prossimi a -1 indicano superfici non vegetate come corpi idrici e aree urbanizzate
+
+Per il calcolo degli indici NDVI pre e post incendio ho usato la funzione `im.ndvi` del pacchetto `imageRy`
 
 ```r
 # calcolo indici con la funzione im.ndvi del pacchetto imageR
