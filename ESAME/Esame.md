@@ -101,7 +101,7 @@ La visualizzazione separata delle bande del visibile (blu, verde e rosso) e dall
 
 # Analisi DVI
 
-cos'è e come si calcola ma io ho usato la funzione di R
+cos'è e come si calcola ma io ho usato la funzione di R e specifica delle bande da considerare
 
 ```r
 # calcolo dell'indice pre e post incendio 
