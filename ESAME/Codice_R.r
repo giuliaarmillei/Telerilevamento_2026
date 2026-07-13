@@ -56,11 +56,20 @@ plot(dvi_post, col = cividis(100), main = "DVI agosto 2022")
 dev.off()
 
 # differenza DVI pre e post incendio
-dvi_diff <- dvi_pre - dvi_post
+dvi_diff <- dvi_post - dvi_pre
 plot(dvi_diff, col = cividis(100), main = "Differenza DVI pre-post incendio")
 
-
 # Analisi NDVI
+# calcolo indici con la funzione im.ndvi del pacchetto imageRy
+ndvi_pre <- im.ndvi(pre, 4, 3)
+ndvi_post <- im.ndvi(post, 4, 3)
+
+# visualizzazione indici per il confronto temporale
+im.multiframe(1,2) #suddivisione della finestra grafica in 1 riga e 2 colonne
+plot(ndvi_pre, col = inferno(100), main = "NDVI luglio 2022")
+plot(ndvi_post, col = inferno(100), main = "NDVI agosto 2022")
+dev.off()
+
 
 
 
