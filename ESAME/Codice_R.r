@@ -3,6 +3,7 @@ library(terra) #
 library(imageRy) #
 library(viridis) #
 library(ggplot2) #
+library(ggridges) #
 library(patchwork) #
 
 # Impostazione della working directory
@@ -69,6 +70,8 @@ im.multiframe(1,2) #suddivisione della finestra grafica in 1 riga e 2 colonne
 plot(ndvi_pre, col = inferno(100), main = "NDVI luglio 2022")
 plot(ndvi_post, col = inferno(100), main = "NDVI agosto 2022")
 dev.off()
+
+# Analisi statistica ... Ridgeline plot??
 
 
 
