@@ -1,22 +1,34 @@
-# Analisi di impatto sulla vegetazione in seguito all'incendio di Serra da Estrela (2022)
+# ANALISI DELL'IMPATTO SULLA VEGETAZIONE IN SEGUITO ALL'INCENDIO DEL 2022 NELLA SERRA DA ESTRELA (PORTOGALLO)
+
+**Esame di telerilevamento geo-ecologico in R 2026**  
+**Giulia Armillei**
+
+## INTRODUZIONE
+
+Nell'agosto del 2022, il Parco Nazionale della Serra da Estrela, in Portogallo, è stato devastato dal più grande incendio boschivo degli ultimi 50 anni. Alimentato da temeprature estreme e forti venti, l'incendio ha bruciato 25.000 ettari di territorio, costringendo all'evacuazione le comunità locali. L'evento ha interessato habitat montani di elevato valore ecologico, provocando ingenti danni alla vegetazione naturale e agli ecosistemi locali. Le immagini satellitari di Sentinel-2 (programma Copernicus) permettono di analizzare gli effetti dell'incendio boschivo del 2022 sulla vegetazione della Serra da Estrela, valutando tre diverse fasi:
+
+* Luglio 2022 (01/07/2022 - 31/07/2022): situazione pre-incendio
+  
+* Agosto 2022 (10/08/2022 - 31/08/2022): situazione post-incendio
+  
+* Agosto 2024 (10/08/2024 - 31/08/2024): situazione di recupero, due anni dopo l'incendio
+
+<img width="737" height="496" alt="posizione serra" src="https://github.com/user-attachments/assets/b5ca54ec-723a-4393-acdb-8a7127a652db" />
 
 
-# Introduzione
-...
+## OBIETTIVI 
 
-foto immagine
+L'obiettivo dell'analisi è di valutare le variazioni della copertura vegetale nell'area della Serra da Estrela pre e post incendio e di osservare il recupero vegetazionale due anni dopo l'evento, attraverso l'analisi multitemporale e l'elaborazione quantitativa di indici di vegetazione:
 
-# Obiettivi dell'analisi
+* **DVI**: Difference Vegetation Index
+* **NDVI**: Normalized Difference Vegetation Index
 
-....
+## METODOLOGIA
 
-# METODOLOGIA
+### Raccolta immagini
+Le immagini sono state acquisite dal portale web di [Google Earth Engine](https://earthengine.google.com/), selezionando l'area colpita dall'incendio e le date sopra riportate. 
 
-
-# Raccolta immagini
-
-
-# Impostazione della working directory
+### Impostazione della working directory
 
 ```r
 setwd("C:/Users/Giulia/OneDrive - Alma Mater Studiorum Università di Bologna/Desktop/esame")
@@ -24,7 +36,7 @@ getwd() #verifica della working directory
 list.files() #lista dei file all'interno della working directory
 ```
 
-# Caricamento pacchetti utilizzati nello studio
+### Caricamento pacchetti utilizzati nello studio
 
 ```r
 library(terra) #
@@ -35,9 +47,9 @@ library(ggridges) #
 library(patchwork) #
 ```
 
-# Impostazione e visualizzazione dati raster Sentinel - 2
+### Impostazione e visualizzazione dati raster Sentinel - 2
 
-PRE-INCENDIO (LUGLIO 2022)
+**PRE-INCENDIO (LUGLIO 2022)**
 ```r
 pre <- rast("Preincendio_luglio2022.tif") #importazione 
 plot(pre) #visualizzazione delle bande spettrali
@@ -46,7 +58,7 @@ plot(pre) #visualizzazione delle bande spettrali
 <img width="480" height="480" alt="preincendio" src="https://github.com/user-attachments/assets/f30bf323-68c3-4378-9b2c-323013d30e4f" />
 
 
-POST-INCENDIO (AGOSTO 2022)
+**POST-INCENDIO (AGOSTO 2022)**
 ```r
 post <- rast("Postincendio_agosto2022.tif") 
 plot(post) 
@@ -55,7 +67,7 @@ plot(post)
 <img width="480" height="480" alt="postincendio" src="https://github.com/user-attachments/assets/d8256580-903c-4dad-a984-8e0cedda3720" />
 
 
-# Composizione RGB a colori naturali 
+### Composizione RGB a colori naturali 
 
 ```r
 # Suddivisione della finestra grafica in 1 riga e 2 colonne
@@ -73,7 +85,7 @@ dev.off()
 La composizione RGB a colori naturali permette di effettuare un primo confronto qualitativo tra le condizioni dell'area di studio pre e post incendio, evidenziando le variazioni della copertura vegetale e le aree percorse dal fuoco, che appaiono con tonalità più scure o brunaste. 
 
 
-# Visualizzazione delle singole bande del visibile (B2, B3, B4) e del vicino infrarosso (B8) pre e post incendio
+### Visualizzazione delle singole bande del visibile (B2, B3, B4) e del vicino infrarosso (B8) pre e post incendio
 
 ```r
 im.multiframe(2,4) #suddivisione della finestra grafica in 2 righe e 4 colonne
@@ -97,10 +109,10 @@ dev.off()
 
 La visualizzazione separata delle bande del visibile (blu, verde e rosso) e dalla banda del vicino infrarosso (NIR) consente di analizzare le modifiche della risposta spettrale delle diverse superfici prima e dopo l'incendio. In particolare, osservando la banda del NIR, sensibile alla presenza e allo stato di salute della vegetazione, si nota una diminuzione della riflettanza, in seguito all'incendio. 
 
-# Visualizzazione immagini a falsi colori
+### Visualizzazione immagini a falsi colori
 
 
-# Analisi DVI
+### Analisi DVI
 
 cos'è e come si calcola ma io ho usato la funzione di R e specifica delle bande da considerare
 
@@ -132,7 +144,7 @@ plot(dvi_diff, col = cividis(100), main = "Differenza DVI pre-post incendio")
 
 commento ...
 
-# Analisi NDVI
+### Analisi NDVI
 cos'è e come si calcola e funzione usata in R
 
 ```r
@@ -150,7 +162,7 @@ dev.off()
 
 commento...
 
-# Analisi statistica della densità di distribuzione dell'indice NDVI
+### Analisi statistica della densità di distribuzione dell'indice NDVI
 
 cos'è e a cosa serve
 
