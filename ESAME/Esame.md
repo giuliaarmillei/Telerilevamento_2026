@@ -99,6 +99,25 @@ La visualizzazione separata delle bande del visibile (blu, verde e rosso) e dall
 # Visualizzazione immagini a falsi colori
 
 
+# Analisi DVI
+
+cos'è e come si calcola ma io ho usato la funzione di R
+
+```r
+# calcolo dell'indice pre e post incendio 
+dvi_pre <- im.dvi(pre, 4, 3)
+dvi_post <- im.dvi(post, 4, 3)
+
+# visualizzazione indici per il confronto temporale
+im.multiframe(1,2) #suddivisione della finestra grafica in 1 riga e 2 colonne
+plot(dvi_pre, col = cividis(100), main = "DVI luglio 2022")
+plot(dvi_post, col = cividis(100), main = "DVI agosto 2022")
+dev.off()
+```
+
+<img width="480" height="480" alt="indicidvi" src="https://github.com/user-attachments/assets/6a1a8c40-a1f0-4293-8c0b-e79d5711d308" />
+
+commento....
 
 
 
