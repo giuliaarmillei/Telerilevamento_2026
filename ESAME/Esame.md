@@ -114,7 +114,14 @@ La visualizzazione separata delle bande del visibile (blu, verde e rosso) e dall
 
 ### Analisi DVI
 
-cos'è e come si calcola ma io ho usato la funzione di R e specifica delle bande da considerare
+Il **Difference Vegetation Index (DVI)** è un indice di vegetazione ottenuto come diiferenza tra la riflettanza della banda del vicino infrarosso (NIR) e quella della banda del rosso (Red):
+
+**DVI = NIR - Red**
+
+La vegetazione sana riflette intensamente la radiazione nel vicino infrarosso e assorbe gran parte della radiazione nel rosso, per i processi fotosintetici. di conseguenza è usato per valutare la presenza di vegetazione: valori elevati di DVI indicano una vegetazione vigorosa e con elevata attività fotosintetica. 
+È un indice non normalizzato, ma fornisce informazioni comparative, per evidenziare la perdita di vegetazione causata dal fuoco. 
+
+Per il calcolo dell'indice pre e post incendio utilizzo la funzione `im.dvi` del pacchetto `imageRy` 
 
 ```r
 # calcolo dell'indice pre e post incendio 
@@ -130,19 +137,16 @@ dev.off()
 
 <img width="480" height="480" alt="indicidvi" src="https://github.com/user-attachments/assets/6a1a8c40-a1f0-4293-8c0b-e79d5711d308" />
 
-commento....
-
-Per un confronto migliore ??? calcolo la differenza tra gli indici DVI pre e post incendio 
+Il confronto tra i valori del DVI pre e post incendio evidenzia una riduzione della risposta vegetazionale in seguito all'evento del 2022, dovuta alla perdita di biomassa vegetale. 
 
 ```r
-dvi_diff <- dvi_post - dvi_pre
+dvi_diff <- dvi_post - dvi_pre # differenza tra gli indici dvi pre e post incendio
 plot(dvi_diff, col = cividis(100), main = "Differenza DVI pre-post incendio")
 ```
 
 <img width="480" height="480" alt="Diidvi" src="https://github.com/user-attachments/assets/07a3c41b-2304-4745-859b-7796daad092c" />
 
-
-commento ...
+La differenza tra gli indici DVI pre e post incendio, permette di evidenziare spazialemente le aree maggiormente colpite dal passaggio del fuoco e caratterizzate dalla maggior perdita di attività fotosintetica, in corrispondenza di valori negativi-
 
 ### Analisi NDVI
 cos'è e come si calcola e funzione usata in R
