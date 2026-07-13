@@ -119,6 +119,16 @@ dev.off()
 
 commento....
 
+Per un confronto migliore ??? calcolo la differenza tra gli indici DVI pre e post incendio 
+
+```r
+dvi_diff <- dvi_pre - dvi_post
+plot(dvi_diff, col = cividis(100), main = "Differenza DVI pre-post incendio")
+```
+
+<img width="480" height="480" alt="differenzaDVI" src="https://github.com/user-attachments/assets/17756d81-f63a-44d9-b721-e935af203688" />
+
+commento ...
 
 
 
