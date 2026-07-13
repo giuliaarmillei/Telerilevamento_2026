@@ -43,8 +43,8 @@ dev.off()
 
 # Visualizzazione a falsi colori??
 
-# Analisi DVI
 
+# Analisi DVI
 # calcolo indici con funzione im.dvi del pacchetto imageRy
 dvi_pre <- im.dvi(pre, 4, 3)
 dvi_post <- im.dvi(post, 4, 3)
