@@ -129,25 +129,20 @@ Per il calcolo dell'indice pre e post incendio utilizzo la funzione `im.dvi` del
 dvi_pre <- im.dvi(pre, 4, 3)
 dvi_post <- im.dvi(post, 4, 3)
 
+# differenza DVI pre e post incendio
+dvi_diff <- dvi_post - dvi_pre
+
 # visualizzazione indici per il confronto temporale
-im.multiframe(1,2) #suddivisione della finestra grafica in 1 riga e 2 colonne
+im.multiframe(1,3) #suddivisione della finestra grafica in 1 riga e 3 colonne
 plot(dvi_pre, col = cividis(100), main = "DVI luglio 2022")
 plot(dvi_post, col = cividis(100), main = "DVI agosto 2022")
+plot(dvi_diff, col = cividis(100), main = "Differenza DVI")
 dev.off()
 ```
 
-<img width="480" height="480" alt="indicidvi" src="https://github.com/user-attachments/assets/6a1a8c40-a1f0-4293-8c0b-e79d5711d308" />
+<img width="480" height="480" alt="indicidvi" src="https://github.com/user-attachments/assets/76ded5bc-f2fb-4e5b-8ea7-ee73630adf91" />
 
-Il confronto tra i valori del DVI pre e post incendio evidenzia una riduzione della risposta vegetazionale in seguito all'evento del 2022, dovuta alla perdita di biomassa vegetale. 
-
-```r
-dvi_diff <- dvi_post - dvi_pre # differenza tra gli indici dvi pre e post incendio
-plot(dvi_diff, col = cividis(100), main = "Differenza DVI pre-post incendio")
-```
-
-<img width="480" height="480" alt="Diidvi" src="https://github.com/user-attachments/assets/07a3c41b-2304-4745-859b-7796daad092c" />
-
-La differenza tra gli indici DVI pre e post incendio, permette di evidenziare spazialemente le aree maggiormente colpite dal passaggio del fuoco e caratterizzate dalla maggior perdita di attività fotosintetica, in corrispondenza di valori negativi-
+Il confronto tra i valori del DVI pre e post incendio evidenzia una riduzione della risposta vegetazionale in seguito all'evento del 2022, dovuta alla perdita di biomassa vegetale. Inoltre, la differenza tra gli indici DVI pre e post incendio, permette di evidenziare spazialemente le aree maggiormente colpite dal passaggio del fuoco e caratterizzate dalla maggior perdita di attività fotosintetica, in corrispondenza di valori negativi-
 
 ### Analisi NDVI
 
@@ -167,15 +162,18 @@ Per il calcolo degli indici NDVI pre e post incendio ho usato la funzione `im.nd
 ndvi_pre <- im.ndvi(pre, 4, 3)
 ndvi_post <- im.ndvi(post, 4, 3)
 
+# calcolo differenza tra gli indici
+ndvi_diff <- ndvi_post - ndvi_pre 
+
 # visualizzazione indici per il confronto temporale
-im.multiframe(1,2) #suddivisione della finestra grafica in 1 riga e 2 colonne
+im.multiframe(1,3) #suddivisione della finestra grafica in 1 riga e 3 colonne
 plot(ndvi_pre, col = inferno(100), main = "NDVI luglio 2022")
 plot(ndvi_post, col = inferno(100), main = "NDVI agosto 2022")
+plot(ndvi_diff, col = inferno(100), main = "Differenza NDVI")
 dev.off()
 ```
-<img width="480" height="480" alt="ndvi" src="https://github.com/user-attachments/assets/f8bf5185-7207-4276-9ae9-b50139085a4b" />
 
-
+<img width="480" height="480" alt="indicindvi" src="https://github.com/user-attachments/assets/ad12370c-7c57-42af-be22-66e51736093f" />
 
 Il confronto degli indici pre e post incendio mostra una diminuzione dei valori nelle aree percorse dal fuoco, evidenziando la perdita di copertura vegetale e di attività fotosintetica. 
 
