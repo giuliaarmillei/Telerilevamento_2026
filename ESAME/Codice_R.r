@@ -1,10 +1,10 @@
 # Caricamento pacchetti utilizzati
-library(terra) #
-library(imageRy) #
-library(viridis) #
-library(ggplot2) #
-library(ggridges) #
-library(patchwork) #
+library(terra) # Gestione, elaborazione e analisi dei dati raster
+library(imageRy) # Visualizzazione ed elaborazione di immagini raster
+library(viridis) # Palette di colori per grafici 
+library(ggplot2) # Creazione di grafici personalizzati
+library(ggridges) # Realizzazione di ridgline plot per il confronto di distribuzioni
+library(patchwork) # Combinazione di più grafici in un'unica figura
 
 # Impostazione della working directory
 setwd("C:/Users/Giulia/OneDrive - Alma Mater Studiorum Università di Bologna/Desktop/esame")
