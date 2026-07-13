@@ -175,11 +175,11 @@ dev.off()
 ```
 <img width="480" height="480" alt="ndvi" src="https://github.com/user-attachments/assets/f8bf5185-7207-4276-9ae9-b50139085a4b" />
 
-commento...
+Il confronto degli indici pre e post incendio mostra una diminuzione dei valori nelle aree percorse dal fuoco, evidenziando la perdita di copertura vegetale e di attività fotosintetica. 
 
-### Analisi statistica della densità di distribuzione dell'indice NDVI
+### Analisi multitemporale della distribuzione dell'NDVI mediante ridgeline plot
 
-cos'è e a cosa serve
+Il ridgeline plot permette di analizzare e confrontare la distribuzione dei valori dell'indice NDVI nelle diverse date di acquisizione delle immagini satellitari, evidenziando le variazioni della risposta della vegetazione nel periodo precedente e successivo all'incendio. 
 
 ```r
 # creazione dello stack con i due indici NDVI pre e post incendio
@@ -194,7 +194,9 @@ im.ridgeline(stack_ndvi, scale = 1, palette = "inferno")
 
 <img width="480" height="480" alt="ridgelineplot" src="https://github.com/user-attachments/assets/e74d3071-789d-4ae5-89a0-e224d916d357" />
 
-commento...
+Dopo l'incendio si osserva uno spostamento della distribuzione verso valori più bassi di NDVI e, nello specifico, a una diminuzione della densità dei valori elevati e l'aumento della densità di valori bassi. Questo è associato alla perdita di biomasa vegetale e alla riduzione della capacità fotosintetica della vegetazione danneggiata dal fuoco.
+
+###
 
 
 
