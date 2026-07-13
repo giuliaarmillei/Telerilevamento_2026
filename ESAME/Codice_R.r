@@ -72,8 +72,9 @@ plot(ndvi_post, col = inferno(100), main = "NDVI agosto 2022")
 dev.off()
 
 # Analisi statistica ... Ridgeline plot??
-
-
+stack_ndvi <- c(ndvi_pre, ndvi_post) # creazione dello stack dei due indici NDVI pre e post incendio
+names(stack_ndvi) <- c("NDVI_Pre", "NDVI_Post") # assegnazione dei nomi ai due elementi dello stack
+im.ridgeline(stack_ndvi, scale = 1, palette = "inferno") # generazione del ridgeline plot
 
 
 
