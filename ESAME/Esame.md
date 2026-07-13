@@ -31,6 +31,7 @@ library(terra) #
 library(imageRy) #
 library(viridis) #
 library(ggplot2) #
+library(ggridges) #
 library(patchwork) #
 ```
 
