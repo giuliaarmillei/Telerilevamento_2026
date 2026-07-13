@@ -152,6 +152,22 @@ commento...
 
 # Analisi statistica della densità di distribuzione dell'indice NDVI
 
+cos'è e a cosa serve
+
+```r
+# creazione dello stack con i due indici NDVI pre e post incendio
+stack_ndvi <- c(ndvi_pre, ndvi_post)
+
+# assegnazione dei nomi ai due elementi dello stack
+names(stack_ndvi) <- c("NDVI_Pre", "NDVI_Post")
+
+# generazione del ridgeline plot con la funzione im.ridgeline
+im.ridgeline(stack_ndvi, scale = 1, palette = "inferno")
+```
+
+<img width="480" height="480" alt="ridgelineplot" src="https://github.com/user-attachments/assets/e74d3071-789d-4ae5-89a0-e224d916d357" />
+
+commento...
 
 
 
