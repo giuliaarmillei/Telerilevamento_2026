@@ -83,7 +83,7 @@ im.multiframe(1,3)
 # Visualizzazione a colori naturali con schema RGB (B4=Red=layer3, B3=Green=layer2, B2=Blu=layer1)
 plotRGB(pre, r = 3, g = 2, b = 1, stretch = "lin", main = "Pre-incendio")
 plotRGB(post, r = 3, g = 2, b = 1, stretch = "lin", main = "Post-incendio")
-plotRGB(post2024, r = 3, g = 2, B = 1, stretch = "lin", main = "Due anni dopo")
+plotRGB(post2024, r = 3, g = 2, b = 1, stretch = "lin", main = "Due anni dopo")
 
 # Chiusura finestra grafica corrente
 dev.off() 
@@ -97,7 +97,7 @@ La composizione RGB a colori naturali permette di effettuare un primo confronto 
 ### Visualizzazione delle singole bande del visibile (B2, B3, B4) e del vicino infrarosso (B8) pre e post incendio
 
 ```r
-im.multiframe(2,4) #suddivisione della finestra grafica in 2 righe e 4 colonne
+im.multiframe(3,4) #suddivisione della finestra grafica in 3 righe e 4 colonne
 
 # Pre-incendio (luglio2022)
 plot(pre[[1]], col = magma(100), main = "Pre-incendio, B2")
@@ -111,16 +111,18 @@ plot(post[[2]], col = magma(100), main = "Post-incendio, B3")
 plot(post[[3]], col = magma(100), main = "Post-incendio, B4")
 plot(post[[4]], col = magma(100), main = "Post-incendio, B8")
 
+# Due anni dopo (agosto 2024)
+plot(post2024[[1]], col = magma(100), main = "Due anni dopo, B2")
+plot(post2024[[2]], col = magma(100), main = "Due anni dopo, B3")
+plot(post2024[[3]], col = magma(100), main = "Due anni dopo, B4")
+plot(post2024[[4]], col = magma(100), main = "Due anni dopo, B8")
+
 dev.off()
 ```
 
-<img width="480" height="480" alt="singolebarre" src="https://github.com/user-attachments/assets/57a3c0ae-1e56-401f-a34a-f7e049986766" />
+<img width="480" height="480" alt="bande" src="https://github.com/user-attachments/assets/4ba9b5a6-8307-416e-bbb7-2642c1789eb5" />
 
-La visualizzazione separata delle bande del visibile (blu, verde e rosso) e dalla banda del vicino infrarosso (NIR) consente di analizzare le modifiche della risposta spettrale delle diverse superfici prima e dopo l'incendio. In particolare, osservando la banda del NIR, sensibile alla presenza e allo stato di salute della vegetazione, si nota una diminuzione della riflettanza, in seguito all'incendio. 
-
-### Visualizzazione immagini a falsi colori
-
-???
+La visualizzazione separata delle bande del visibile (blu, verde e rosso) e dalla banda del vicino infrarosso (NIR) consente di analizzare le modifiche della risposta spettrale delle diverse superfici nelle tre diverse fasi analizzate. In particolare, osservando la banda del NIR, sensibile alla presenza e allo stato di salute della vegetazione, si nota una diminuzione della riflettanza, in seguito all'incendio e una ripresa due anni dopo. 
 
 ### Analisi DVI
 
