@@ -27,9 +27,10 @@ plot(post2024)
 ## Le immagini sono state esportate e salvate in formato .png
 
 # Composizione RGB a colori naturali
-im.multiframe(1,2) #suddivisione della finestra grafica in 1 riga e 2 colonne
+im.multiframe(1,3) #suddivisione della finestra grafica in 1 riga e 3 colonne
 plotRGB(pre, r = 3, g = 2, b = 1, stretch = "lin", main = "Pre-incendio")
 plotRGB(post, r = 3, g = 2, b = 1, stretch = "lin", main = "Post-incendio")
+plotRGB(post2024, r = 3, g = 2, B = 1, stretch = "lin", main = "Due anni dopo")
 dev.off()
 
 # Visualizzazione delle singole bande del visibile e del vicino infrarosso pre e post incendio
