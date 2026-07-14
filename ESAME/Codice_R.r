@@ -30,11 +30,11 @@ plot(post2024)
 im.multiframe(1,3) #suddivisione della finestra grafica in 1 riga e 3 colonne
 plotRGB(pre, r = 3, g = 2, b = 1, stretch = "lin", main = "Pre-incendio")
 plotRGB(post, r = 3, g = 2, b = 1, stretch = "lin", main = "Post-incendio")
-plotRGB(post2024, r = 3, g = 2, B = 1, stretch = "lin", main = "Due anni dopo")
+plotRGB(post2024, r = 3, g = 2, b = 1, stretch = "lin", main = "Due anni dopo")
 dev.off()
 
 # Visualizzazione delle singole bande del visibile e del vicino infrarosso pre e post incendio
-im.multiframe(2,4) #suddivisione della finestra grafica in 2 righe e 4 colonne
+im.multiframe(3,4) #suddivisione della finestra grafica in 3 righe e 4 colonne
 ## Pre-incendio (luglio2022)
 plot(pre[[1]], col = magma(100), main = "Pre-incendio, B2")
 plot(pre[[2]], col = magma(100), main = "Pre-incendio, B3")
@@ -45,10 +45,12 @@ plot(post[[1]], col = magma(100), main = "Post-incendio, B2")
 plot(post[[2]], col = magma(100), main = "Post-incendio, B3")
 plot(post[[3]], col = magma(100), main = "Post-incendio, B4")
 plot(post[[4]], col = magma(100), main = "Post-incendio, B8")
+## Due anni dopo (agosto 2024)
+plot(post2024[[1]], col = magma(100), main = "Due anni dopo, B2")
+plot(post2024[[2]], col = magma(100), main = "Due anni dopo, B3")
+plot(post2024[[3]], col = magma(100), main = "Due anni dopo, B4")
+plot(post2024[[4]], col = magma(100), main = "Due anni dopo, B8")
 dev.off()
-
-# Visualizzazione a falsi colori??
-???
 
 # Analisi DVI
 ## calcolo indici con funzione im.dvi del pacchetto imageRy
