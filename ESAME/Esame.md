@@ -77,20 +77,22 @@ plot(post2024)
 
 ### Composizione RGB a colori naturali 
 ```r
-# Suddivisione della finestra grafica in 1 riga e 2 colonne
-im.multiframe(1,2)
+# Suddivisione della finestra grafica in 1 riga e 3 colonne
+im.multiframe(1,3)
 
 # Visualizzazione a colori naturali con schema RGB (B4=Red=layer3, B3=Green=layer2, B2=Blu=layer1)
 plotRGB(pre, r = 3, g = 2, b = 1, stretch = "lin", main = "Pre-incendio")
 plotRGB(post, r = 3, g = 2, b = 1, stretch = "lin", main = "Post-incendio")
+plotRGB(post2024, r = 3, g = 2, B = 1, stretch = "lin", main = "Due anni dopo")
 
-dev.off()
+# Chiusura finestra grafica corrente
+dev.off() 
 ```
 
-<img width="480" height="480" alt="truecolor" src="https://github.com/user-attachments/assets/a366fddd-e70c-46f4-aa07-ca11f83debe2" />
+<img width="480" height="480" alt="RGB" src="https://github.com/user-attachments/assets/f38d3b5e-43c1-450b-ab50-dfb8a83096dd" />
 
-La composizione RGB a colori naturali permette di effettuare un primo confronto qualitativo tra le condizioni dell'area di studio pre e post incendio, evidenziando le variazioni della copertura vegetale e le aree percorse dal fuoco, che appaiono con tonalità più scure o brunaste. 
 
+La composizione RGB a colori naturali permette di effettuare un primo confronto qualitativo tra le condizioni dell'area di studio pre e post incendio, evidenziando le variazioni della copertura vegetale e le aree percorse dal fuoco, che appaiono con tonalità più scure o brunaste. A due anni dall'evento, si osserva un parziale ripristino delle tonalità verdi in alcune porzioni dell'area, segnale della rigenerazione della vegetazione e in altre zone invece un recupero incompleto.   
 
 ### Visualizzazione delle singole bande del visibile (B2, B3, B4) e del vicino infrarosso (B8) pre e post incendio
 
