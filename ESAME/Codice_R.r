@@ -20,6 +20,10 @@ plot(pre)
 post <- rast("Postincendio_agosto2022.tif")
 plot(post)
 
+## Situazione due anni dopo l'evento (agosto 2024)
+post2024 <- rast("SerradaEstrela_agosto2024.tif")
+plot(post2024)
+
 ## Le immagini sono state esportate e salvate in formato .png
 
 # Composizione RGB a colori naturali
