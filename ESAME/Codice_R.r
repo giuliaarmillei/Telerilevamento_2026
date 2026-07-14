@@ -71,7 +71,7 @@ dvi_diff2 <- dvi_post2024 - dvi_post
 dvi_diff3 <- dvi_post2024 - dvi_pre
 
 ## visualizzazione differenze indici per il confronto temporale
-im.multiframe(1, 3)
+im.multiframe(1, 3) # suddivisione finestra grafica in 1 riga e 3 colonne
 plot(dvi_diff1, col = cividis(100), main = "luglio2022 - agosto2022")
 plot(dvi_diff2, col = cividis(100), main = "agosto2022 - agosto2024")
 plot(dvi_diff3, col = cividis(100), main = "luglio2022 - agosto2024")
@@ -96,18 +96,15 @@ ndvi_diff2 <- ndvi_post2024 - ndvi_post
 ndvi_diff3 <- ndvi_post2024 - ndvi_pre
 
 ## visualizzazione differenze indici per il confronto temporale
-im.multiframe(1, 3) 
+im.multiframe(1, 3) # suddivisione finestra grafica in 1 riga e 3 colonne
 plot(ndvi_diff1, col = inferno(100), main = "luglio2022 - agosto2022")
 plot(ndvi_diff2, col = inferno(100), main = "agosto2022 - agosto2024")
 plot(ndvi_diff3, col = inferno(100), main = "luglio2022 - agosto2024")
 dev.off()
 
 # Analisi multitemporale della distribuzione dell'NDVI mediante ridgeline plot
-stack_ndvi <- c(ndvi_pre, ndvi_post) # creazione dello stack dei due indici NDVI pre e post incendio
-names(stack_ndvi) <- c("NDVI_Pre", "NDVI_Post") # assegnazione dei nomi ai due elementi dello stack
+stack_ndvi <- c(ndvi_pre, ndvi_post, ndvi_post2024) # creazione dello stack dei due indici NDVI pre e post incendio
+names(stack_ndvi) <- c("NDVI_Pre", "NDVI_Post", "NDVI_Post2024") # assegnazione dei nomi ai due elementi dello stack
 im.ridgeline(stack_ndvi, scale = 1, palette = "inferno") # generazione del ridgeline plot
-
-
-
 
 
