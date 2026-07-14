@@ -47,9 +47,9 @@ library(ggridges) # Realizzazione di ridgline plot per il confronto di distribuz
 library(patchwork) # Combinazione di più grafici in un'unica figura
 ```
 
-### Impostazione e visualizzazione dati raster Sentinel - 2
+### Importazione e visualizzazione dati raster Sentinel - 2
 
-**PRE-INCENDIO (LUGLIO 2022)**
+**Pre-incendio (luglio 2022)**
 ```r
 pre <- rast("Preincendio_luglio2022.tif") #importazione 
 plot(pre) #visualizzazione delle bande spettrali
@@ -58,7 +58,7 @@ plot(pre) #visualizzazione delle bande spettrali
 <img width="480" height="480" alt="preincendio" src="https://github.com/user-attachments/assets/f30bf323-68c3-4378-9b2c-323013d30e4f" />
 
 
-**POST-INCENDIO (AGOSTO 2022)**
+**Post-incendio (agosto 2022)**
 ```r
 post <- rast("Postincendio_agosto2022.tif") 
 plot(post) 
@@ -66,9 +66,16 @@ plot(post)
 
 <img width="480" height="480" alt="postincendio" src="https://github.com/user-attachments/assets/d8256580-903c-4dad-a984-8e0cedda3720" />
 
+**Due anni dopo l'incendio (agosto 2024)**
+```r
+post2024 <- rast("SerradaEstrela_agosto2024.tif")
+plot(post2024)
+```
+
+<img width="480" height="480" alt="post2024" src="https://github.com/user-attachments/assets/345fb327-7205-4fd6-8d27-87a36a2d957d" />
+
 
 ### Composizione RGB a colori naturali 
-
 ```r
 # Suddivisione della finestra grafica in 1 riga e 2 colonne
 im.multiframe(1,2)
