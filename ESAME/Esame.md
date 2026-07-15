@@ -218,7 +218,92 @@ im.ridgeline(stack_ndvi, scale = 1, palette = "inferno")
 
 Dopo l'incendio si osserva uno spostamento della distribuzione verso valori più bassi di NDVI e, nello specifico, a una diminuzione della densità dei valori elevati e l'aumento della densità di valori bassi. Dopo due anni, la distribuzione assomiglia a quella pre incendio, con una diminuzione della densità di valori vicino allo zero e un aumento dei valori prossimi a 0.5 e 1.0 
 
+### Classificazione 
 
+spiegazione 
 
+```r
+#classificazione non supervisionata delle tre immagini raster in 3 cluster
+class_pre <- im.classify(ndvi_pre, seed = 3, num_cluster = 3)
+class_post <- im.classify(ndvi_post, seed = 3, num_cluster = 3)
+class_post2024 <- im.classify(ndvi_post2024, seed = 3, num_cluster = 3)
+```
 
+<img width="800" height="600" alt="classi" src="https://github.com/user-attachments/assets/d727d1e2-675e-4e12-a538-53862bd7cad4" />
+
+```r
+#assegnazione delle etichette alle 2 classi
+levels(class_pre) <- data.frame(value = c(1, 2, 3), label = c("Vegetazione", "Suolo nudo", "Vegetazione rada"))
+levels(class_post) <- data.frame(value = c(1, 2, 3), label = c("Vegetazione", "Suolo nudo", "Vegetazione rada"))
+levels(class_post2024) <- data.frame(value = c(1, 2, 3), label = c("Vegetazione", "Suolo nudo", "Vegetazione rada"))
+
+#visualizzazione delle classificazioni
+im.multiframe(1, 3)
+plot(class_pre, main = "Pre incendio")
+plot(class_post, main = "Post incendio")
+plot(class_post2024, main = "Due anni dopo")
+dev.off()
+```
+
+<img width="800" height="600" alt="mappe" src="https://github.com/user-attachments/assets/aaf00718-84b5-4092-a1de-00175af00819" />
+
+```r
+#calcolo delle frequenze 
+f_pre <- freq(class_pre)
+f_post <- freq(class_post)
+f_post2024 <- freq(class_post2024)
+
+#calcolo delle proporzioni
+prop_pre <- f_pre$count / ncell(class_pre)
+prop_post <- f_post$count / ncell(class_post)
+prop_post2024 <- f_post2024$count / ncell(class_post2024)
+
+#calcolo delle percentuali
+perc_pre <- prop_pre * 100
+perc_post <- prop_post * 100
+perc_post2024 <- prop_post2024 * 100
+
+#creazione tabella riassuntiva delle percentuali per ogni fase
+tabella <- data.frame(
+  class = c("Vegetazione", "Suolo nudo", "Vegetazione rada"),
+  Pre_incendio = perc_pre,
+  Post_incendio = perc_post,
+  Post_2024 = perc_post2024
+)
+
+#visualizzazione della tabella
+tabella
+```
+
+| Class | Pre_incendio | Post_incendio | Post_2024 |
+| :--- | :---: | :---: | :---: |
+| **Vegetazione** | 32.39% | 23.13% | 28.41% |
+| **Suolo nudo** | 29.50% | 42.10% | 36.9% |
+| **Vegetazione rada** | 38.10% | 34.78% | 34.66% |
+
+### Generazione di istogrammi per il confronto delle percentuali
+
+```r
+p1 <- ggplot(tabella, aes(x = class, y = perc_pre, fill = class)) +  # ...
+  geom_bar(stat = "identity") +  # ..
+  ylim(c(0, 100)) +  # ...
+  labs(title = "Copertura Pre incendio", x = "Classe", y = "Percentuale (%)") + # ...
+  theme(legend.position = "none") # ...
+
+p2 <- ggplot(tabella, aes(x = class, y = perc_post, fill = class)) +
+   geom_bar(stat = "identity") +
+   ylim(c(0, 100))+
+   labs(title = "Copertura Post incendio", x = "Classe", y = "Percentuale (%)") +
+   theme(legend.position = "none")
+
+p3 <- ggplot(tabella, aes(x = class, y = perc_post2024, fill = class)) +
+   geom_bar(stat = "identity") +
+   ylim(c(0, 100))+
+   labs(title = "Copertura due anni dopo", x = "Classe", y = "Percentuale (%)") 
+
+#visualizzazione dei grafici 
+p1 + p2 + p3
+```
+
+<img width="800" height="600" alt="istogrammi" src="https://github.com/user-attachments/assets/2aaa9e54-9a4c-43bf-a497-7729469a13e9" />
 
