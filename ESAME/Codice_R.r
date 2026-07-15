@@ -65,18 +65,6 @@ plot(dvi_post, col = cividis(100), main = "DVI agosto 2022")
 plot(dvi_post2024, col = cividis(100), main = "DVI agosto 2024")
 dev.off()
 
-## calcolo differenze indici dvi
-dvi_diff1 <- dvi_post - dvi_pre
-dvi_diff2 <- dvi_post2024 - dvi_post
-dvi_diff3 <- dvi_post2024 - dvi_pre
-
-## visualizzazione differenze indici per il confronto temporale
-im.multiframe(1, 3) # suddivisione finestra grafica in 1 riga e 3 colonne
-plot(dvi_diff1, col = cividis(100), main = "luglio2022 - agosto2022")
-plot(dvi_diff2, col = cividis(100), main = "agosto2022 - agosto2024")
-plot(dvi_diff3, col = cividis(100), main = "luglio2022 - agosto2024")
-dev.off()
-
 # Analisi NDVI
 ## calcolo indici con la funzione im.ndvi del pacchetto imageRy
 ndvi_pre <- im.ndvi(pre, 4, 3)
@@ -97,9 +85,9 @@ ndvi_diff3 <- ndvi_post2024 - ndvi_pre
 
 ## visualizzazione differenze indici per il confronto temporale
 im.multiframe(1, 3) # suddivisione finestra grafica in 1 riga e 3 colonne
-plot(ndvi_diff1, col = inferno(100), main = "luglio2022 - agosto2022")
-plot(ndvi_diff2, col = inferno(100), main = "agosto2022 - agosto2024")
-plot(ndvi_diff3, col = inferno(100), main = "luglio2022 - agosto2024")
+plot(ndvi_diff1, col = inferno(100), main = "agosto2022 - luglio2022")
+plot(ndvi_diff2, col = inferno(100), main = "agosto2024 - agosto2022")
+plot(ndvi_diff3, col = inferno(100), main = "agosto2024 - luglio2022")
 dev.off()
 
 # Analisi multitemporale della distribuzione dell'NDVI mediante ridgeline plot
@@ -108,21 +96,22 @@ names(stack_ndvi) <- c("NDVI_Pre", "NDVI_Post", "NDVI_Post2024") # assegnazione 
 im.ridgeline(stack_ndvi, scale = 1, palette = "inferno") # generazione del ridgeline plot
 
 # Classificazione 
-#classificazione non supervisionata delle tre immagini raster in 2 cluster
+#classificazione non supervisionata delle tre immagini raster in 3 cluster
 class_pre <- im.classify(ndvi_pre, seed = 3, num_cluster = 3)
 class_post <- im.classify(ndvi_post, seed = 3, num_cluster = 3)
 class_post2024 <- im.classify(ndvi_post2024, seed = 3, num_cluster = 3)
 
-#assegnazione delle etichette alle 2 classi
+#assegnazione delle etichette alle 3 classi
 levels(class_pre) <- data.frame(value = c(1, 2, 3), label = c("Vegetazione", "Suolo nudo", "Vegetazione rada"))
 levels(class_post) <- data.frame(value = c(1, 2, 3), label = c("Vegetazione", "Suolo nudo", "Vegetazione rada"))
 levels(class_post2024) <- data.frame(value = c(1, 2, 3), label = c("Vegetazione", "Suolo nudo", "Vegetazione rada"))
 
 #visualizzazione delle classificazioni
 im.multiframe(1, 3)
-plot(class_pre, main = "Luglio 2022")
-plot(class_post, main = "Agosto 2022")
-plot(class_post2024, main = "Agosto 2024")
+plot(class_pre, main = "Pre incendio")
+plot(class_post, main = "Post incendio")
+plot(class_post2024, main = "Due anni dopo")
+dev.off()
 
 #calcolo delle frequenze 
 f_pre <- freq(class_pre)
