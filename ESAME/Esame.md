@@ -87,8 +87,7 @@ plotRGB(post2024, r = 3, g = 2, b = 1, stretch = "lin", main = "Due anni dopo")
 dev.off() 
 ```
 
-<img width="480" height="480" alt="RGB" src="https://github.com/user-attachments/assets/f38d3b5e-43c1-450b-ab50-dfb8a83096dd" />
-
+<img width="800" height="480" alt="rgb" src="https://github.com/user-attachments/assets/c4bd3950-fb4f-41b3-b528-fdec7be40f59" />
 
 La composizione RGB a colori naturali permette di effettuare un primo confronto qualitativo tra le condizioni dell'area di studio pre e post incendio, evidenziando le variazioni della copertura vegetale e le aree percorse dal fuoco, che appaiono con tonalità più scure o brunaste. A due anni dall'evento, si osserva un parziale ripristino delle tonalità verdi in alcune porzioni dell'area, segnale della rigenerazione della vegetazione e in altre zone invece un recupero incompleto.   
 
@@ -118,7 +117,7 @@ plot(post2024[[4]], col = magma(100), main = "Due anni dopo, B8")
 dev.off()
 ```
 
-<img width="480" height="480" alt="bande" src="https://github.com/user-attachments/assets/4ba9b5a6-8307-416e-bbb7-2642c1789eb5" />
+<img width="800" height="800" alt="singole bande" src="https://github.com/user-attachments/assets/f4bfaaa6-9bc1-4585-a326-3b794be172b9" />
 
 La visualizzazione separata delle bande del visibile (blu, verde e rosso) e dalla banda del vicino infrarosso (NIR) consente di analizzare le modifiche della risposta spettrale delle diverse superfici nelle tre diverse fasi analizzate. In particolare, osservando la banda del NIR, sensibile alla presenza e allo stato di salute della vegetazione, si nota una diminuzione della riflettanza, in seguito all'incendio e una ripresa due anni dopo. 
 
