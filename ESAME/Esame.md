@@ -147,29 +147,10 @@ plot(dvi_post2024, col = cividis(100), main = "DVI agosto 2024")
 dev.off()
 ```
 
-<img width="480" height="480" alt="dvi" src="https://github.com/user-attachments/assets/5c57e787-670d-4c11-823a-72854dbb7062" />
-
+<img width="800" height="600" alt="ndvi" src="https://github.com/user-attachments/assets/2451bd49-7161-4e24-aaf7-d47ad2c8e484" />
 
 Il confronto tra i valori del DVI pre e post incendio evidenzia una riduzione della risposta vegetazionale in seguito all'evento del 2022, dovuta alla perdita di biomassa vegetale. A due anni dall'evento, l'analisi mostra un incremento dei valori di DVI rispetto alla situazione immediatamente successiva all'incendio, evidenziando l'avvio dei processi di rigenerazione della vegetazione. 
-
-
-```r
-# calcolo differenze indici
-dvi_diff1 <- dvi_post - dvi_pre
-dvi_diff2 <- dvi_post2024 - dvi_post
-dvi_diff3 <- dvi_post2024 - dvi_pre
-
-# visualizzazione differenze indici per il confronto temporale
-im.multiframe(1, 3) # suddivisione finestra grafica in 1 riga e 3 colonne
-plot(dvi_diff1, col = cividis(100), main = "luglio2022 - agosto2022")
-plot(dvi_diff2, col = cividis(100), main = "agosto2022 - agosto2024")
-plot(dvi_diff3, col = cividis(100), main = "luglio2022 - agosto2024")
-dev.off()
-```
-
-<img width="480" height="480" alt="diffdvi" src="https://github.com/user-attachments/assets/da896d18-3308-4b76-9f4d-52128586e866" />
-
-Questi tre confronti sono completari:il primo evidenzia l'area maggiormente colpito dal passaggio delle fiamme, in corrispondenza dei valori negativi; gli altri due descrivono il recupero nel tempo rispetto alla condizione pre incendio e immediatamente successiva. Nel terzo confronto si osservano zone con valori prossimi allo zero, ad indicare una vegetazione con condizioni simili a quelle pre incendio, ma anche zone con valori negativi, in cui il recupero è ancora incompleto.    
+    
 
 ### Analisi NDVI
 
@@ -188,6 +169,7 @@ Per il calcolo degli indici NDVI pre e post incendio ho usato la funzione `im.nd
 # calcolo indici con la funzione im.ndvi del pacchetto imageR
 ndvi_pre <- im.ndvi(pre, 4, 3)
 ndvi_post <- im.ndvi(post, 4, 3)
+ndvi_post2024 <- im.ndvi(post2024, 4, 3)
 
 # visualizzazione indici 
 im.multiframe(1,3) #suddivisione della finestra grafica in 1 riga e 3 colonne
@@ -197,7 +179,7 @@ plot(ndvi_diff, col = inferno(100), main = "Differenza NDVI")
 dev.off()
 ```
 
-<img width="480" height="480" alt="indicindvi" src="https://github.com/user-attachments/assets/ad12370c-7c57-42af-be22-66e51736093f" />
+<img width="800" height="600" alt="ndvi" src="https://github.com/user-attachments/assets/26520721-5be4-423d-9c34-b117a2538dd6" />
 
 Il confronto degli indici pre e post incendio mostra una diminuzione dei valori nelle aree percorse dal fuoco, evidenziando la perdita di copertura vegetale e di attività fotosintetica. 
 
@@ -209,14 +191,13 @@ ndvi_diff3 <- ndvi_post2024 - ndvi_pre
 
 # visualizzazione differenze indici per il confronto temporale
 im.multiframe(1, 3) # suddivisione finestra grafica in 1 riga e 3 colonne
-plot(ndvi_diff1, col = inferno(100), main = "luglio2022 - agosto2022")
-plot(ndvi_diff2, col = inferno(100), main = "agosto2022 - agosto2024")
-plot(ndvi_diff3, col = inferno(100), main = "luglio2022 - agosto2024")
+plot(ndvi_diff1, col = inferno(100), main = "agosto2022 - luglio2022")
+plot(ndvi_diff2, col = inferno(100), main = "agosto2024 - agosto2022")
+plot(ndvi_diff3, col = inferno(100), main = "agosto2024 - luglio2022")
 dev.off()
 ```
 
-<img width="480" height="480" alt="diffndvi" src="https://github.com/user-attachments/assets/0d8a8b31-81eb-450f-8db4-99e73fc44cd2" />
-
+<img width="800" height="600" alt="difndvi" src="https://github.com/user-attachments/assets/da98e4a5-e980-4aef-9851-2b8a80a99d10" />
 
 ### Analisi multitemporale della distribuzione dell'NDVI mediante ridgeline plot
 
@@ -233,8 +214,7 @@ names(stack_ndvi) <- c("NDVI_Pre", "NDVI_Post", "NDVI_Post2024")
 im.ridgeline(stack_ndvi, scale = 1, palette = "inferno")
 ```
 
-<img width="480" height="480" alt="ridgeline" src="https://github.com/user-attachments/assets/a98eb0b6-5dd1-496d-81e5-76a905594b02" />
-
+<img width="800" height="480" alt="ridgelineplot" src="https://github.com/user-attachments/assets/813abf29-69a5-4608-a1f9-e94e0921e877" />
 
 Dopo l'incendio si osserva uno spostamento della distribuzione verso valori più bassi di NDVI e, nello specifico, a una diminuzione della densità dei valori elevati e l'aumento della densità di valori bassi. Dopo due anni, la distribuzione assomiglia a quella pre incendio, con una diminuzione della densità di valori vicino allo zero e un aumento dei valori prossimi a 0.5 e 1.0 
 
