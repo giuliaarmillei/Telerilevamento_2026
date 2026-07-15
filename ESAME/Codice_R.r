@@ -108,9 +108,19 @@ names(stack_ndvi) <- c("NDVI_Pre", "NDVI_Post", "NDVI_Post2024") # assegnazione 
 im.ridgeline(stack_ndvi, scale = 1, palette = "inferno") # generazione del ridgeline plot
 
 # Classificazione 
-class_pre <- im.classify(ndvi_pre, seed = 42, num_cluster = 3)
-class_post <- im.classify(ndvi_post, seed = 42, num_cluster = 3)
-class_post2024 <- im.classify(ndvi_post2024, seed = 42, num_cluster = 3)
+#classificazione non supervisionata delle tre immagini raster in 2 cluster
+class_pre <- im.classify(ndvi_pre, seed = 3, num_cluster = 2)
+class_post <- im.classify(ndvi_post, seed = 3, num_cluster = 2)
+class_post2024 <- im.classify(ndvi_post2024, seed = 3, num_cluster = 2)
+
+#assegnazione delle etichette alle 2 classi
+levels(class_pre) <- data.frame(value = c(1, 2), label = c("Vegetazione", "Non Vegetazione"))
+levels(class_post) <- data.frame(value = c(1, 2), label = c("Vegetazione", "Non Vegetazione"))
+levels(class_post2024) <- data.frame(value = c(1, 2), lavel = c("Vegetazione", "Non Vegetazione"))
+
+
+                                
+
 
 
 
