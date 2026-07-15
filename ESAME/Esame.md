@@ -55,8 +55,7 @@ pre <- rast("Preincendio_luglio2022.tif") #importazione
 plot(pre) #visualizzazione delle bande spettrali
 ```
 
-
-
+<img width="800" height="480" alt="pre" src="https://github.com/user-attachments/assets/66109608-ed7c-4cc2-a188-349caa4f79cb" />
 
 **Post-incendio (agosto 2022)**
 ```r
@@ -64,7 +63,7 @@ post <- rast("Postincendio_agosto2022.tif")
 plot(post)
 ```
 
-
+<img width="800" height="480" alt="post" src="https://github.com/user-attachments/assets/6b1bfeae-9224-49f2-a2e7-195b75ab75b6" />
 
 **Due anni dopo l'incendio (agosto 2024)**
 ```r
@@ -72,8 +71,7 @@ post2024 <- rast("SerradaEstrela_agosto2024.tif")
 plot(post2024)
 ```
 
-
-
+<img width="800" height="480" alt="post2024" src="https://github.com/user-attachments/assets/435b6b1b-9084-4dc6-a780-36d7978f902a" />
 
 ### Composizione RGB a colori naturali 
 ```r
