@@ -149,9 +149,11 @@ plot(dvi_post2024, col = cividis(100), main = "DVI agosto 2024")
 dev.off()
 ```
 
-<img width="480" height="480" alt="dvi" src="https://github.com/user-attachments/assets/6432786f-4e23-4d2a-9a75-fe699a70b89b" />
+<img width="480" height="480" alt="dvi" src="https://github.com/user-attachments/assets/5c57e787-670d-4c11-823a-72854dbb7062" />
+
 
 Il confronto tra i valori del DVI pre e post incendio evidenzia una riduzione della risposta vegetazionale in seguito all'evento del 2022, dovuta alla perdita di biomassa vegetale. A due anni dall'evento, l'analisi mostra un incremento dei valori di DVI rispetto alla situazione immediatamente successiva all'incendio, evidenziando l'avvio dei processi di rigenerazione della vegetazione. 
+
 
 ```r
 # calcolo differenze indici
