@@ -170,24 +170,3 @@ p3 <- ggplot(tabella, aes(x = class, y = perc_post2024, fill = class)) +
 
 #visualizzazione dei grafici 
 p1 + p2 + p3
-
-
-
-
-   
-
-
-
-
-
-
-
-
-
-
-
-                                
-
-
-
-
