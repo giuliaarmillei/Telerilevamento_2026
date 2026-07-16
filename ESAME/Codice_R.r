@@ -91,7 +91,7 @@ plot(ndvi_diff3, col = inferno(100), main = "agosto2024 - luglio2022")
 dev.off()
 
 # Analisi multitemporale della distribuzione dell'NDVI mediante ridgeline plot
-stack_ndvi <- c(ndvi_pre, ndvi_post, ndvi_post2024)               #creazione dello stack dei due indici NDVI pre e post incendio
+stack_ndvi <- c(ndvi_pre, ndvi_post, ndvi_post2024)               #creazione dello stack dei tre indici NDVI 
 names(stack_ndvi) <- c("NDVI_Pre", "NDVI_Post", "NDVI_Post2024")  #assegnazione dei nomi ai due elementi dello stack
 im.ridgeline(stack_ndvi, scale = 1, palette = "inferno")          #generazione del ridgeline plot
 
