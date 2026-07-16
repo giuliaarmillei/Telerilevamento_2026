@@ -331,7 +331,7 @@ p1 + p2 + p3
 
 ## CONCLUSIONI 🗺️
 
-L'analisi tramite telerilevamento ha permesso di valutare l'impatto dell'incendio del 2022 sulla vegetazione della Serra da Estrela e di monitorare il processo di recupero nei due anni successivi. Le analisi multitemporali di NDVI e DVI hanno evidenziato la perdita di vigore vegetativo dopo l'incendio e il successivo recupero nel 2024. Il post-incendio mostra uno spostamento verso classi NDVI più basse, confermando la riduzione della copertura vegetale. Gli istogrammi delle evidenziano una variazione della % della vegetazione dal 32% al 23% e una parziale ripresa al 28% due anni dopo. Il recupero però non è omogeneo: permangono aree con bassa attività vegetativa associate a danni più persistenti. Questa analisi dimostra come il telerilevamento permetta di quantificare e monitorare la resilienza degli ecosistemi dopo eventi di disturbo
+L'analisi tramite telerilevamento ha permesso di valutare l'impatto dell'incendio del 2022 sulla vegetazione della Serra da Estrela e di monitorare il processo di recupero nei due anni successivi. Le analisi multitemporali di NDVI e DVI hanno evidenziato la perdita di vigore vegetativo dopo l'incendio e il successivo recupero nel 2024. Il post-incendio mostra uno spostamento verso classi NDVI più basse, confermando la riduzione della copertura vegetale. Gli istogrammi evidenziano una variazione della % della vegetazione dal 32% al 23% e una parziale ripresa al 28% due anni dopo. Il recupero però non è omogeneo: permangono aree con bassa attività vegetativa associate a danni più persistenti. Questa analisi dimostra come il telerilevamento permetta di quantificare e monitorare la resilienza degli ecosistemi dopo eventi di disturbo
 
 ## SITOGRAFIA
 
