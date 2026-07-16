@@ -8,7 +8,7 @@ library(patchwork)  # Combinazione di più grafici in un'unica figura
 
 # Impostazione della working directory
 setwd("C:/Users/Giulia/OneDrive - Alma Mater Studiorum Università di Bologna/Desktop/esame")
-getwd()       #controllo della working directory
+getwd()       #verifica della working directory
 list.files()  #lista dei file all'interno della working directory
 
 # Importazione e visualizzazione dei dati raster Sentinel - 2
