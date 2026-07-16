@@ -219,7 +219,7 @@ im.ridgeline(stack_ndvi, scale = 1, palette = "inferno")
 
 <img width="800" height="480" alt="ridgelineplot" src="https://github.com/user-attachments/assets/813abf29-69a5-4608-a1f9-e94e0921e877" />
 
-Dopo l'incendio si osserva uno spostamento della distribuzione verso valori più bassi di NDVI e, nello specifico, una diminuzione della densità dei valori elevati e l'aumento della densità di valori bassi. Dopo due anni, la distribuzione assomiglia a quella pre incendio, con una diminuzione della densità di valori vicino allo zero e un aumento dei valori prossimi a 0.5 e 1.0 
+Dopo l'incendio si osserva uno spostamento della distribuzione verso valori più bassi di NDVI e, nello specifico, una diminuzione della densità dei valori elevati e l'aumento della densità di valori bassi. Dopo due anni, la distribuzione torna ad avere un andamento simile a quello pre incendio, con una diminuzione della densità di valori vicino allo zero e un aumento dei valori prossimi a 0.5 e 1.0 
 
 ### Classificazione 📊
 
