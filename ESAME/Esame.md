@@ -155,7 +155,7 @@ Il confronto tra i valori del DVI pre e post incendio evidenzia una riduzione de
 
 ### Analisi NDVI 🌱
 
-Il **Normalized Difference Vegetation Index (NDVI)** è uno degli indici di vegetaione più utilizzati nell'ambito del telerilevamento per valutare lo stato e il vigore della copertura vegetale. Come per il DVI, si basa sulle caratteristiche spettrali della vegetazione, che assorbe la radiazione nella banda del rosso e riflette invece le radiazioni nel vicino infrarosso. 
+Il **Normalized Difference Vegetation Index (NDVI)** è uno degli indici di vegetazione più utilizzati nell'ambito del telerilevamento per valutare lo stato e il vigore della copertura vegetale. Come per il DVI, si basa sulle caratteristiche spettrali della vegetazione, che assorbe la radiazione nella banda del rosso e riflette invece le radiazioni nel vicino infrarosso. 
 A differenza del DVI, però, l'NDVI è un indice normalizzato che assume valori compresi tra -1 e +1:
 
 **$NDVI = \frac{NIR - Red}{NIR + Red}$**
