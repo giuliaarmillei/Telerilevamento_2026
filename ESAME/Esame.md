@@ -325,4 +325,4 @@ p3 <- ggplot(tabella, aes(x = class, y = perc_post2024, fill = class)) +
 p1 + p2 + p3
 ```
 
-<img width="480" height="480" alt="istogrammi" src="https://github.com/user-attachments/assets/f8e01206-6343-4275-a1b6-c81404276f48" />
+<img width="800" height="600" alt="istogrammi" src="https://github.com/user-attachments/assets/816d614c-4dfa-4e89-bc4c-abb5ac12b9e4" />
