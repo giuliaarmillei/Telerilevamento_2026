@@ -120,7 +120,7 @@ dev.off()
 
 <img width="800" height="800" alt="singole bande" src="https://github.com/user-attachments/assets/f4bfaaa6-9bc1-4585-a326-3b794be172b9" />
 
-La visualizzazione separata delle bande del visibile (blu, verde e rosso) e dalla banda del vicino infrarosso (NIR) consente di analizzare le modifiche della risposta spettrale delle diverse superfici nelle tre diverse fasi analizzate. In particolare, osservando la banda del NIR, sensibile alla presenza e allo stato di salute della vegetazione, si nota una diminuzione della riflettanza, in seguito all'incendio e una ripresa due anni dopo. 
+La visualizzazione separata delle bande del visibile (blu, verde e rosso) e dalla banda del vicino infrarosso (NIR) consente di analizzare le modifiche della risposta spettrale delle diverse superfici nelle tre fasi analizzate. In particolare, osservando la banda del NIR, sensibile alla presenza e allo stato di salute della vegetazione, si nota una diminuzione della riflettanza, in seguito all'incendio e una ripresa due anni dopo. 
 
 
 ### Analisi DVI 🌱
@@ -129,7 +129,7 @@ Il **Difference Vegetation Index (DVI)** è un indice di vegetazione ottenuto co
 
 **DVI = NIR - Red**
 
-La vegetazione sana riflette intensamente la radiazione nel vicino infrarosso e assorbe gran parte della radiazione nel rosso, per i processi fotosintetici. di conseguenza è usato per valutare la presenza di vegetazione: valori elevati di DVI indicano una vegetazione vigorosa e con elevata attività fotosintetica. 
+La vegetazione sana riflette intensamente la radiazione nel vicino infrarosso e assorbe gran parte della radiazione nel rosso, per i processi fotosintetici. Di conseguenza è usato per valutare la presenza di vegetazione: valori elevati di DVI indicano una vegetazione vigorosa e con elevata attività fotosintetica. 
 È un indice non normalizzato, ma fornisce informazioni comparative, per evidenziare la perdita di vegetazione causata dal fuoco. 
 
 Per il calcolo dell'indice pre e post incendio utilizzo la funzione `im.dvi` del pacchetto `imageRy` 
@@ -156,7 +156,7 @@ Il confronto tra i valori del DVI pre e post incendio evidenzia una riduzione de
 ### Analisi NDVI 🌱
 
 Il **Normalized Difference Vegetation Index (NDVI)** è uno degli indici di vegetaione più utilizzati nell'ambito del telerilevamento per valutare lo stato e il vigore della copertura vegetale. Come per il DVI, si basa sulle caratteristiche spettrali della vegetazione, che assorbe la radiazione nella banda del rosso e riflette invece le radiazioni nel vicino infrarosso. 
-A differenza del DVI, però, l'NDVI è un indice normalizzato che assomu valori compresi tra -1 e +1:
+A differenza del DVI, però, l'NDVI è un indice normalizzato che assume valori compresi tra -1 e +1:
 
 **$NDVI = \frac{NIR - Red}{NIR + Red}$**
 
@@ -182,7 +182,7 @@ dev.off()
 
 <img width="800" height="600" alt="ndvi" src="https://github.com/user-attachments/assets/26520721-5be4-423d-9c34-b117a2538dd6" />
 
-Il confronto degli indici pre e post incendio mostra una diminuzione dei valori nelle aree percorse dal fuoco, evidenziando la perdita di copertura vegetale e di attività fotosintetica. 
+Il confronto degli indici pre e post incendio mostra una diminuzione dei valori nelle aree percorse dal fuoco, evidenziando la perdita di copertura vegetale e di attività fotosintetica: l'area interessata dall'incendio registra valori negativi di NDVI subito dopo l'evento. Due anni dopo, in alcune zone dell'area incendiata i valori sono prossimo allo 0.5, mentre in altre sono ancora al di sotto dello 0, ad indicare un recupero incompleto della vegetazione pre-impatto. 
 
 ```r
 # calcolo differenza inidici ndvi tra le tre fasi
@@ -200,9 +200,11 @@ dev.off()
 
 <img width="800" height="600" alt="difndvi" src="https://github.com/user-attachments/assets/da98e4a5-e980-4aef-9851-2b8a80a99d10" />
 
+Questi tre grafici sono complementari: il primo ci fa vedere la variazione della vegetazione causata dall'incendio e come i valori negativi siano legati alle aree maggiormente colpite dal fuoco; il secondo ci permette di valutare la capacità di rigenerazione due anni dopo, evidenziando le aree con valori positivi come quelle in fase di recupero; il terzo rappresenta, invece, il bilancio complessivo del recupero vegetativo, individuando le aree in cui la vegetazione ha raggiunto condizioni simili a quelle precedenti all'incendio e quelle in cui persistono ancora gli effetti del disturbo. 
+
 ### Analisi multitemporale della distribuzione dell'NDVI mediante ridgeline plot
 
-Il ridgeline plot permette di analizzare e confrontare la distribuzione dei valori dell'indice NDVI nelle diverse date di acquisizione delle immagini satellitari, evidenziando le variazioni della risposta della vegetazione nel periodo precedente e successivo all'incendio. 
+Il ridgeline plot permette di analizzare e confrontare la distribuzione dei valori dell'indice NDVI nelle diverse date di acquisizione delle immagini satellitari, evidenziando le variazioni della risposta della vegetazione nei tre periodi in esame. 
 
 ```r
 # creazione dello stack con i tre indici NDVI 
@@ -221,7 +223,7 @@ Dopo l'incendio si osserva uno spostamento della distribuzione verso valori più
 
 ### Classificazione 📊
 
-spiegazione 
+La classificazione non supervisionata permette di raggruppare i pixel delle immagini NDVI in tre classi omogenee di vigore vegetativo, distinguendo aree con diverso stato della vegetazione ed evidenziando così l'impatto dell'incendio e la capacità di rigenerazione dell'ecosistema dopo due anni.
 
 ```r
 # classificazione non supervisionata delle tre immagini raster in 3 cluster
@@ -329,4 +331,8 @@ p1 + p2 + p3
 
 ## CONCLUSIONI 🗺️
 
+L'analisi tramite telerilevamento ha permesso di valutare l'impatto dell'incendio del 2022 sulla vegetazione della Serra da Estrela e di monitorare il processo di recupero nei due anni successivi. Le analisi multitemporali di NDVI e DVI hanno evidenziato la perdita di vigore vegetativo dopo l'incendio e il successivo recupero nel 2024. Il post-incendio mostra uno spostamento verso classi NDVI più basse, confermando la riduzione della copertura vegetale. Gli istogrammi delle evidenziano una variazione della % della vegetazione dal 32% al 23% e una parziale ripresa al 28% due anni dopo. Il recupero però non è omogeneo: permangono aree con bassa attività vegetativa associate a danni più persistenti. Questa analisi dimostra come il telerilevamento permetta di quantificare e monitorare la resilienza degli ecosistemi dopo eventi di disturbo
+
 ## SITOGRAFIA
+
+Monitoring areas damaged by forest fires in Serra da Estrela, Portugal [pagina web](https://mapping.emergency.copernicus.eu/activations/EMSN149/)
