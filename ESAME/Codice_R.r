@@ -33,6 +33,13 @@ plotRGB(post, r = 3, g = 2, b = 1, stretch = "lin", main = "Post-incendio")
 plotRGB(post2024, r = 3, g = 2, b = 1, stretch = "lin", main = "Due anni dopo")
 dev.off()             #chiusura della finestra grafica
 
+# Composizione RGB a falsi colori
+im.multiframe(1, 3)   #suddivisione della finestra grafica in 1 riga e 3 colonne
+plotRGB(pre, r = 4, g = 3, b = 2, stretch = "lin", main = "Pre-incendio")
+plotRGB(post, r = 4, g = 3, b = 2, stretch = "lin", main = "Post-incendio")
+plotRGB(post2024, r = 4, g = 3, b = 2, stretch = "lin", main = "Due anni dopo")
+dev.off() 
+
 # Visualizzazione delle singole bande del visibile e del vicino infrarosso 
 im.multiframe(3, 4)   #suddivisione della finestra grafica in 3 righe e 4 colonne
 ## Pre-incendio (luglio2022)
