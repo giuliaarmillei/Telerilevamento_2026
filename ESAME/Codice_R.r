@@ -1,15 +1,15 @@
 # Caricamento pacchetti utilizzati
-library(terra) # Gestione, elaborazione e analisi dei dati raster
-library(imageRy) # Visualizzazione ed elaborazione di immagini raster
-library(viridis) # Palette di colori per grafici 
-library(ggplot2) # Creazione di grafici personalizzati
-library(ggridges) # Realizzazione di ridgline plot per il confronto di distribuzioni
-library(patchwork) # Combinazione di più grafici in un'unica figura
+library(terra)      # Gestione, elaborazione e analisi dei dati raster
+library(imageRy)    # Visualizzazione ed elaborazione di immagini raster
+library(viridis)    # Palette di colori per grafici 
+library(ggplot2)    # Creazione di grafici personalizzati
+library(ggridges)   # Realizzazione di ridgline plot per il confronto di distribuzioni
+library(patchwork)  # Combinazione di più grafici in un'unica figura
 
 # Impostazione della working directory
 setwd("C:/Users/Giulia/OneDrive - Alma Mater Studiorum Università di Bologna/Desktop/esame")
-getwd() #controllo della working directory
-list.files() #lista dei file all'interno della working directory
+getwd()       #controllo della working directory
+list.files()  #lista dei file all'interno della working directory
 
 # Importazione e visualizzazione dei dati raster Sentinel - 2
 ## Situazione pre incendio (luglio 2022)
@@ -27,14 +27,14 @@ plot(post2024)
 ## Le immagini sono state esportate e salvate in formato .png
 
 # Composizione RGB a colori naturali
-im.multiframe(1, 3) #suddivisione della finestra grafica in 1 riga e 3 colonne
+im.multiframe(1, 3)   #suddivisione della finestra grafica in 1 riga e 3 colonne
 plotRGB(pre, r = 3, g = 2, b = 1, stretch = "lin", main = "Pre-incendio")
 plotRGB(post, r = 3, g = 2, b = 1, stretch = "lin", main = "Post-incendio")
 plotRGB(post2024, r = 3, g = 2, b = 1, stretch = "lin", main = "Due anni dopo")
-dev.off()
+dev.off()             #chiusura della finestra grafica
 
 # Visualizzazione delle singole bande del visibile e del vicino infrarosso pre e post incendio
-im.multiframe(3, 4) #suddivisione della finestra grafica in 3 righe e 4 colonne
+im.multiframe(3, 4)   #suddivisione della finestra grafica in 3 righe e 4 colonne
 ## Pre-incendio (luglio2022)
 plot(pre[[1]], col = magma(100), main = "Pre-incendio, B2")
 plot(pre[[2]], col = magma(100), main = "Pre-incendio, B3")
@@ -59,7 +59,7 @@ dvi_post <- im.dvi(post, 4, 3)
 dvi_post2024 <- im.dvi(post2024, 4, 3) 
 
 ## visualizzazione indici 
-im.multiframe(1, 3) #suddivisione della finestra grafica in 1 riga e 3 colonne
+im.multiframe(1, 3)   #suddivisione della finestra grafica in 1 riga e 3 colonne
 plot(dvi_pre, col = cividis(100), main = "DVI luglio 2022")
 plot(dvi_post, col = cividis(100), main = "DVI agosto 2022")
 plot(dvi_post2024, col = cividis(100), main = "DVI agosto 2024")
@@ -72,28 +72,28 @@ ndvi_post <- im.ndvi(post, 4, 3)
 ndvi_post2024 <- im.ndvi(post2024, 4, 3)
 
 ## visualizzazione indici 
-im.multiframe(1, 3) #suddivisione della finestra grafica in 1 riga e 3 colonne
+im.multiframe(1, 3)   #suddivisione della finestra grafica in 1 riga e 3 colonne
 plot(ndvi_pre, col = inferno(100), main = "NDVI luglio 2022")
 plot(ndvi_post, col = inferno(100), main = "NDVI agosto 2022")
 plot(ndvi_post2024, col = inferno(100), main = "NDVI agosto 2024")
 dev.off()
 
-## calcolo differenza inidici ndvi
+## calcolo differenza inidici ndvi tra le diverse fasi
 ndvi_diff1 <- ndvi_post - ndvi_pre
 ndvi_diff2 <- ndvi_post2024 - ndvi_post
 ndvi_diff3 <- ndvi_post2024 - ndvi_pre
 
 ## visualizzazione differenze indici per il confronto temporale
-im.multiframe(1, 3) # suddivisione finestra grafica in 1 riga e 3 colonne
+im.multiframe(1, 3)   #suddivisione finestra grafica in 1 riga e 3 colonne
 plot(ndvi_diff1, col = inferno(100), main = "agosto2022 - luglio2022")
 plot(ndvi_diff2, col = inferno(100), main = "agosto2024 - agosto2022")
 plot(ndvi_diff3, col = inferno(100), main = "agosto2024 - luglio2022")
 dev.off()
 
 # Analisi multitemporale della distribuzione dell'NDVI mediante ridgeline plot
-stack_ndvi <- c(ndvi_pre, ndvi_post, ndvi_post2024) # creazione dello stack dei due indici NDVI pre e post incendio
-names(stack_ndvi) <- c("NDVI_Pre", "NDVI_Post", "NDVI_Post2024") # assegnazione dei nomi ai due elementi dello stack
-im.ridgeline(stack_ndvi, scale = 1, palette = "inferno") # generazione del ridgeline plot
+stack_ndvi <- c(ndvi_pre, ndvi_post, ndvi_post2024)               #creazione dello stack dei due indici NDVI pre e post incendio
+names(stack_ndvi) <- c("NDVI_Pre", "NDVI_Post", "NDVI_Post2024")  #assegnazione dei nomi ai due elementi dello stack
+im.ridgeline(stack_ndvi, scale = 1, palette = "inferno")          #generazione del ridgeline plot
 
 # Classificazione 
 #classificazione non supervisionata delle tre immagini raster in 3 cluster
@@ -114,12 +114,12 @@ colori <- c(
 )
 
 #visualizzazione delle classificazioni
-im.multiframe(1, 3)
+im.multiframe(1, 3)   #suddivisione finestra grafica in 1 riga e 3 colonne
 plot(class_pre, col = colori,  main = "Pre incendio", legend = FALSE)
 plot(class_post, col = colori, main = "Post incendio", legend = FALSE)
 plot(class_post2024, col = colori, main = "Due anni dopo", legend = FALSE)
-#aggiunta manuale di una legenda unica per i tre grafici in alto a destra
-legend("bottomleft",            #posizione della legenda del grafico 
+#aggiunta manuale di una legenda unica per i tre grafici in basso a sinistra
+legend("bottomleft",            #posizione della legenda in basso a sinistra 
        legend = names(colori),  #definizione delle etichette della legenda
        fill = colori,           #definizione dei colori nel riquadro della legenda
        title = "Classe"         #titolo delle legenda
@@ -154,12 +154,12 @@ tabella <- data.frame(
 tabella
 
 # Generazione di istogrammi per il confronto
-p1 <- ggplot(tabella, aes(x = class, y = perc_pre, fill = class)) + 
-  geom_bar(stat = "identity") + 
-  ylim(c(0, 100)) + 
-  scale_fill_manual(values = colori) +
-  labs(title = "Copertura Pre incendio", x = "Classe", y = "Percentuale (%)") +
-  theme(legend.position = "none")
+p1 <- ggplot(tabella, aes(x = class, y = perc_pre, fill = class)) +             #creazione del grafico usando il dataset tabella
+  geom_bar(stat = "identity") +                                                 #definizione del tipo di grafico (grafico a barre)                       
+  ylim(c(0, 100)) +                                                             #limiti asse y
+  scale_fill_manual(values = colori) +                                          #impostazione manuale dei colori delle barre
+  labs(title = "Copertura Post incendio", x = "Classe", y = "Percentuale (%)")  #definizione etichette del grafico
+  theme(legend.position = "none")                                               #elimina la legenda del grafico
 
 p2 <- ggplot(tabella, aes(x = class, y = perc_post, fill = class)) +
    geom_bar(stat = "identity") +
@@ -174,5 +174,5 @@ p3 <- ggplot(tabella, aes(x = class, y = perc_post2024, fill = class)) +
    scale_fill_manual(values = colori) +
    labs(title = "Copertura due anni dopo", x = "Classe", y = "Percentuale (%)") 
 
-#visualizzazione dei grafici 
+#visualizzazione dei grafici uno accanto all'altro
 p1 + p2 + p3
