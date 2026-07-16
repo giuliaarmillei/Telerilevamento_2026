@@ -245,7 +245,7 @@ plot(class_post2024, main = "Due anni dopo")
 dev.off()
 ```
 
-<img width="800" height="600" alt="mappe" src="https://github.com/user-attachments/assets/aaf00718-84b5-4092-a1de-00175af00819" />
+
 
 ```r
 #calcolo delle frequenze 
@@ -304,6 +304,4 @@ p3 <- ggplot(tabella, aes(x = class, y = perc_post2024, fill = class)) +
 #visualizzazione dei grafici 
 p1 + p2 + p3
 ```
-
-<img width="800" height="600" alt="istogrammi" src="https://github.com/user-attachments/assets/2aaa9e54-9a4c-43bf-a497-7729469a13e9" />
 
