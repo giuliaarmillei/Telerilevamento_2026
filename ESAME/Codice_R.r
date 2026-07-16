@@ -33,7 +33,7 @@ plotRGB(post, r = 3, g = 2, b = 1, stretch = "lin", main = "Post-incendio")
 plotRGB(post2024, r = 3, g = 2, b = 1, stretch = "lin", main = "Due anni dopo")
 dev.off()             #chiusura della finestra grafica
 
-# Visualizzazione delle singole bande del visibile e del vicino infrarosso pre e post incendio
+# Visualizzazione delle singole bande del visibile e del vicino infrarosso 
 im.multiframe(3, 4)   #suddivisione della finestra grafica in 3 righe e 4 colonne
 ## Pre-incendio (luglio2022)
 plot(pre[[1]], col = magma(100), main = "Pre-incendio, B2")
