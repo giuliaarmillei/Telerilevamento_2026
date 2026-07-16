@@ -91,6 +91,20 @@ dev.off()
 
 La composizione RGB a colori naturali permette di effettuare un primo confronto qualitativo tra le condizioni dell'area di studio pre e post incendio, evidenziando le variazioni della copertura vegetale e le aree percorse dal fuoco, che appaiono con tonalità più scure o brunaste. A due anni dall'evento, si osserva un parziale ripristino delle tonalità verdi in alcune porzioni dell'area, segnale della rigenerazione della vegetazione e in altre zone invece un recupero incompleto.   
 
+### Composizione RGB a falsi colori
+Sostituendo il NIR al posto della banda del rosso, si evidenziano le zone di vegetazione (rosso). Queste immagini permettono di osservare lo stato di salute della vegetazione, poichè una maggiore riflessione del NIR indica una vegetazione sana che apparità con un rosso più intenso, rispetto invece a una vegetazione danneggiata e sottoposta a stress.
+
+```r
+im.multiframe(1, 3)   #suddivisione della finestra grafica in 1 riga e 3 colonne
+plotRGB(pre, r = 4, g = 3, b = 2, stretch = "lin", main = "Pre-incendio")
+plotRGB(post, r = 4, g = 3, b = 2, stretch = "lin", main = "Post-incendio")
+plotRGB(post2024, r = 4, g = 3, b = 2, stretch = "lin", main = "Due anni dopo")
+dev.off() 
+```
+
+<img width="800" height="600" alt="falsecolor" src="https://github.com/user-attachments/assets/15340150-1326-45c6-8a7f-4c105f9efaeb" />
+
+
 ### Visualizzazione delle singole bande del visibile (B2, B3, B4) e del vicino infrarosso (B8)
 
 ```r
