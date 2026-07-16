@@ -125,14 +125,14 @@ La visualizzazione separata delle bande del visibile (blu, verde e rosso) e dell
 
 ### Analisi DVI 🌱
 
-Il **Difference Vegetation Index (DVI)** è un indice di vegetazione ottenuto come diiferenza tra la riflettanza della banda del vicino infrarosso (NIR) e quella della banda del rosso (Red):
+Il **Difference Vegetation Index (DVI)** è un indice di vegetazione ottenuto come differenza tra la riflettanza della banda del vicino infrarosso (NIR) e quella della banda del rosso (Red):
 
 **DVI = NIR - Red**
 
 La vegetazione sana riflette intensamente la radiazione nel vicino infrarosso e assorbe gran parte della radiazione nel rosso, per i processi fotosintetici. Di conseguenza è usato per valutare la presenza di vegetazione: valori elevati di DVI indicano una vegetazione vigorosa e con elevata attività fotosintetica. 
 È un indice non normalizzato, ma fornisce informazioni comparative, per evidenziare la perdita di vegetazione causata dal fuoco. 
 
-Per il calcolo dell'indice pre e post incendio utilizzo la funzione `im.dvi` del pacchetto `imageRy` 
+Per il calcolo degli indici dvi ho utilizzato la funzione `im.dvi` del pacchetto `imageRy` 
 
 ```r
 # calcolo indici nei tre periodi
@@ -164,7 +164,7 @@ A differenza del DVI, però, l'NDVI è un indice normalizzato che assume valori 
 * Valori intorno allo 0 sono associati a vegetazione rada, arbustiva o a suoli privi di vegetazione
 * Valori prossimi a -1 indicano superfici non vegetate come corpi idrici e aree urbanizzate
 
-Per il calcolo degli indici NDVI pre e post incendio ho usato la funzione `im.ndvi` del pacchetto `imageRy`
+Per il calcolo degli indici NDVI ho usato la funzione `im.ndvi` del pacchetto `imageRy`
 
 ```r
 # calcolo indici nei tre periodi
