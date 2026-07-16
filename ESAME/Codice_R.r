@@ -106,11 +106,25 @@ levels(class_pre) <- data.frame(value = c(1, 2, 3), label = c("Vegetazione", "Su
 levels(class_post) <- data.frame(value = c(1, 2, 3), label = c("Vegetazione", "Suolo nudo", "Vegetazione rada"))
 levels(class_post2024) <- data.frame(value = c(1, 2, 3), label = c("Vegetazione", "Suolo nudo", "Vegetazione rada"))
 
+#assegnazione colori personalizzati alle 3 classi
+colori <- c(
+  "Vegetazione" = "chartreuse4",
+  "Suolo nudo" = "honeydew4",
+  "Vegetazione rada"  = "darkorange1"
+)
+
 #visualizzazione delle classificazioni
 im.multiframe(1, 3)
-plot(class_pre, main = "Pre incendio")
-plot(class_post, main = "Post incendio")
-plot(class_post2024, main = "Due anni dopo")
+plot(class_pre, col = colori,  main = "Pre incendio", legend = FALSE)
+plot(class_post, col = colori, main = "Post incendio", legend = FALSE)
+plot(class_post2024, col = colori, main = "Due anni dopo", legend = FALSE)
+#aggiunta manuale di una legenda unica per i tre grafici in alto a destra
+legend("bottomleft",            #posizione della legenda del grafico 
+       legend = names(colori),  #definizione delle etichette della legenda
+       fill = colori,           #definizione dei colori nel riquadro della legenda
+       title = "Classe"         #titolo delle legenda
+       bg = "white",            #impostazione del colore dello sfondo
+       xpd = TRUE)              #la legenda può essere disegnata fuori dall'area del grafico
 dev.off()
 
 #calcolo delle frequenze 
@@ -143,18 +157,21 @@ tabella
 p1 <- ggplot(tabella, aes(x = class, y = perc_pre, fill = class)) + 
   geom_bar(stat = "identity") + 
   ylim(c(0, 100)) + 
+  scale_fill_manual(values = colori) +
   labs(title = "Copertura Pre incendio", x = "Classe", y = "Percentuale (%)") +
   theme(legend.position = "none")
 
 p2 <- ggplot(tabella, aes(x = class, y = perc_post, fill = class)) +
    geom_bar(stat = "identity") +
    ylim(c(0, 100))+
+   scale_fill_manual(values = colori) +
    labs(title = "Copertura Post incendio", x = "Classe", y = "Percentuale (%)") +
    theme(legend.position = "none")
 
 p3 <- ggplot(tabella, aes(x = class, y = perc_post2024, fill = class)) +
    geom_bar(stat = "identity") +
    ylim(c(0, 100))+
+   scale_fill_manual(values = colori) +
    labs(title = "Copertura due anni dopo", x = "Classe", y = "Percentuale (%)") 
 
 #visualizzazione dei grafici 
