@@ -1,9 +1,9 @@
-# ANALISI DELL'IMPATTO SULLA VEGETAZIONE IN SEGUITO ALL'INCENDIO DEL 2022 NELLA SERRA DA ESTRELA (PORTOGALLO)
+# ANALISI DELL'IMPATTO SULLA VEGETAZIONE IN SEGUITO ALL'INCENDIO DEL 2022 NELLA SERRA DA ESTRELA (PORTOGALLO) 🔥🌿
 
 **Esame di telerilevamento geo-ecologico in R 2026**  
 **Giulia Armillei**
 
-## INTRODUZIONE
+## INTRODUZIONE 📍
 
 Nell'agosto del 2022, il Parco Nazionale della Serra da Estrela, in Portogallo, è stato devastato dal più grande incendio boschivo degli ultimi 50 anni. Alimentato da temeprature estreme e forti venti, l'incendio ha bruciato 25.000 ettari di territorio, costringendo all'evacuazione le comunità locali. L'evento ha interessato habitat montani di elevato valore ecologico, provocando ingenti danni alla vegetazione naturale e agli ecosistemi locali. Le immagini satellitari di Sentinel-2 (programma Copernicus) permettono di analizzare gli effetti dell'incendio boschivo del 2022 sulla vegetazione della Serra da Estrela, valutando tre diverse fasi:
 
@@ -16,14 +16,14 @@ Nell'agosto del 2022, il Parco Nazionale della Serra da Estrela, in Portogallo, 
 <img width="737" height="496" alt="posizione serra" src="https://github.com/user-attachments/assets/b5ca54ec-723a-4393-acdb-8a7127a652db" />
 
 
-## OBIETTIVI 
+## OBIETTIVI 🎯
 
 L'obiettivo dell'analisi è di valutare le variazioni della copertura vegetale nell'area della Serra da Estrela pre e post incendio e di osservare il recupero vegetazionale due anni dopo l'evento, attraverso l'analisi multitemporale e l'elaborazione quantitativa di indici di vegetazione:
 
 * **DVI**: Difference Vegetation Index
 * **NDVI**: Normalized Difference Vegetation Index
 
-## METODOLOGIA
+## METODOLOGIA 🛰️
 
 ### Raccolta immagini
 Le immagini sono state acquisite dal portale web di [Google Earth Engine](https://earthengine.google.com/), selezionando l'area colpita dall'incendio e le date sopra riportate. 
@@ -123,7 +123,7 @@ dev.off()
 La visualizzazione separata delle bande del visibile (blu, verde e rosso) e dalla banda del vicino infrarosso (NIR) consente di analizzare le modifiche della risposta spettrale delle diverse superfici nelle tre diverse fasi analizzate. In particolare, osservando la banda del NIR, sensibile alla presenza e allo stato di salute della vegetazione, si nota una diminuzione della riflettanza, in seguito all'incendio e una ripresa due anni dopo. 
 
 
-### Analisi DVI
+### Analisi DVI 🌱
 
 Il **Difference Vegetation Index (DVI)** è un indice di vegetazione ottenuto come diiferenza tra la riflettanza della banda del vicino infrarosso (NIR) e quella della banda del rosso (Red):
 
@@ -153,7 +153,7 @@ dev.off()
 Il confronto tra i valori del DVI pre e post incendio evidenzia una riduzione della risposta vegetazionale in seguito all'evento del 2022, dovuta alla perdita di biomassa vegetale. A due anni dall'evento, l'analisi mostra un incremento dei valori di DVI rispetto alla situazione immediatamente successiva all'incendio, evidenziando l'avvio dei processi di rigenerazione della vegetazione. 
     
 
-### Analisi NDVI
+### Analisi NDVI 🌱
 
 Il **Normalized Difference Vegetation Index (NDVI)** è uno degli indici di vegetaione più utilizzati nell'ambito del telerilevamento per valutare lo stato e il vigore della copertura vegetale. Come per il DVI, si basa sulle caratteristiche spettrali della vegetazione, che assorbe la radiazione nella banda del rosso e riflette invece le radiazioni nel vicino infrarosso. 
 A differenza del DVI, però, l'NDVI è un indice normalizzato che assomu valori compresi tra -1 e +1:
@@ -219,7 +219,7 @@ im.ridgeline(stack_ndvi, scale = 1, palette = "inferno")
 
 Dopo l'incendio si osserva uno spostamento della distribuzione verso valori più bassi di NDVI e, nello specifico, a una diminuzione della densità dei valori elevati e l'aumento della densità di valori bassi. Dopo due anni, la distribuzione assomiglia a quella pre incendio, con una diminuzione della densità di valori vicino allo zero e un aumento dei valori prossimi a 0.5 e 1.0 
 
-### Classificazione 
+### Classificazione 📊
 
 spiegazione 
 
@@ -326,3 +326,7 @@ p1 + p2 + p3
 ```
 
 <img width="800" height="600" alt="istogrammi" src="https://github.com/user-attachments/assets/816d614c-4dfa-4e89-bc4c-abb5ac12b9e4" />
+
+## CONCLUSIONI 🗺️
+
+## SITOGRAFIA
