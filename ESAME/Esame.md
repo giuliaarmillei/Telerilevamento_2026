@@ -300,12 +300,12 @@ tabella
 ### Generazione di istogrammi per il confronto delle percentuali
 
 ```r
-p1 <- ggplot(tabella, aes(x = class, y = perc_pre, fill = class)) +             #creazione del grafico usando il dataset tabella
-  geom_bar(stat = "identity") +                                                 #definizione del tipo di grafico (grafico a barre)                       
-  ylim(c(0, 100)) +                                                             #limiti asse y
-  scale_fill_manual(values = colori) +                                          #impostazione manuale dei colori delle barre
-  labs(title = "Copertura Post incendio", x = "Classe", y = "Percentuale (%)")  #definizione etichette del grafico
-  theme(legend.position = "none")                                               #elimina la legenda del grafico
+p1 <- ggplot(tabella, aes(x = class, y = perc_pre, fill = class)) +              #creazione del grafico usando il dataset tabella
+  geom_bar(stat = "identity") +                                                  #definizione del tipo di grafico (grafico a barre)                       
+  ylim(c(0, 100)) +                                                              #limiti asse y
+  scale_fill_manual(values = colori) +                                           #impostazione manuale dei colori delle barre
+  labs(title = "Copertura Post incendio", x = "Classe", y = "Percentuale (%)") + #definizione etichette del grafico
+  theme(legend.position = "none")                                                #elimina la legenda del grafico
 
 p2 <- ggplot(tabella, aes(x = class, y = perc_post, fill = class)) +
    geom_bar(stat = "identity") +
