@@ -26,20 +26,6 @@ plot(post2024)
 
 ## Le immagini sono state esportate e salvate in formato .png
 
-# Composizione RGB a colori naturali
-im.multiframe(1, 3)   #suddivisione della finestra grafica in 1 riga e 3 colonne
-plotRGB(pre, r = 3, g = 2, b = 1, stretch = "lin", main = "Pre-incendio")
-plotRGB(post, r = 3, g = 2, b = 1, stretch = "lin", main = "Post-incendio")
-plotRGB(post2024, r = 3, g = 2, b = 1, stretch = "lin", main = "Due anni dopo")
-dev.off()             #chiusura della finestra grafica
-
-# Composizione RGB a falsi colori
-im.multiframe(1, 3)   #suddivisione della finestra grafica in 1 riga e 3 colonne
-plotRGB(pre, r = 4, g = 3, b = 2, stretch = "lin", main = "Pre-incendio")
-plotRGB(post, r = 4, g = 3, b = 2, stretch = "lin", main = "Post-incendio")
-plotRGB(post2024, r = 4, g = 3, b = 2, stretch = "lin", main = "Due anni dopo")
-dev.off() 
-
 # Visualizzazione delle singole bande del visibile e del vicino infrarosso 
 im.multiframe(3, 4)   #suddivisione della finestra grafica in 3 righe e 4 colonne
 ## Pre-incendio (luglio2022)
@@ -57,7 +43,21 @@ plot(post2024[[1]], col = magma(100), main = "Due anni dopo, B2")
 plot(post2024[[2]], col = magma(100), main = "Due anni dopo, B3")
 plot(post2024[[3]], col = magma(100), main = "Due anni dopo, B4")
 plot(post2024[[4]], col = magma(100), main = "Due anni dopo, B8")
-dev.off()
+dev.off()            #chiusura della finestra grafica
+
+# Composizione RGB a colori naturali
+im.multiframe(1, 3)   #suddivisione della finestra grafica in 1 riga e 3 colonne
+plotRGB(pre, r = 3, g = 2, b = 1, stretch = "lin", main = "Pre-incendio")
+plotRGB(post, r = 3, g = 2, b = 1, stretch = "lin", main = "Post-incendio")
+plotRGB(post2024, r = 3, g = 2, b = 1, stretch = "lin", main = "Due anni dopo")
+dev.off()             #chiusura della finestra grafica
+
+# Composizione RGB a falsi colori
+im.multiframe(1, 3)   #suddivisione della finestra grafica in 1 riga e 3 colonne
+plotRGB(pre, r = 4, g = 3, b = 2, stretch = "lin", main = "Pre-incendio")
+plotRGB(post, r = 4, g = 3, b = 2, stretch = "lin", main = "Post-incendio")
+plotRGB(post2024, r = 4, g = 3, b = 2, stretch = "lin", main = "Due anni dopo")
+dev.off() 
 
 # Analisi DVI
 ## calcolo indici con funzione im.dvi del pacchetto imageRy
