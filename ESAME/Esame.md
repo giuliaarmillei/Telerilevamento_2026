@@ -55,55 +55,17 @@ pre <- rast("Preincendio_luglio2022.tif")  #importazione
 plot(pre)                                  #visualizzazione delle bande spettrali
 ```
 
-<img width="800" height="600" alt="pre" src="https://github.com/user-attachments/assets/46980b35-17aa-4f20-89f1-66d5b568f018" />
-
 **Post-incendio (agosto 2022)**
 ```r
 post <- rast("Postincendio_agosto2022.tif")
 plot(post)
 ```
 
-<img width="800" height="600" alt="post" src="https://github.com/user-attachments/assets/df8f74d5-7700-4034-91ce-5bd0da83a669" />
-
 **Due anni dopo l'incendio (agosto 2024)**
 ```r
 post2024 <- rast("SerradaEstrela_agosto2024.tif")
 plot(post2024)
 ```
-
-<img width="800" height="600" alt="post2024" src="https://github.com/user-attachments/assets/a7c887f5-8174-42de-bdac-4c2d49655684" />
-
-### Composizione RGB a colori naturali 
-```r
-# Suddivisione della finestra grafica in 1 riga e 3 colonne
-im.multiframe(1, 3)
-
-# Visualizzazione a colori naturali con schema RGB (B4=Red=layer3, B3=Green=layer2, B2=Blu=layer1)
-plotRGB(pre, r = 3, g = 2, b = 1, stretch = "lin", main = "Pre-incendio")
-plotRGB(post, r = 3, g = 2, b = 1, stretch = "lin", main = "Post-incendio")
-plotRGB(post2024, r = 3, g = 2, b = 1, stretch = "lin", main = "Due anni dopo")
-
-# Chiusura finestra grafica corrente
-dev.off() 
-```
-
-<img width="800" height="600" alt="RGB" src="https://github.com/user-attachments/assets/9fd92b2b-e275-446a-bf95-eb5348dc1d85" />
-
-La composizione RGB a colori naturali permette di effettuare un primo confronto qualitativo tra le condizioni dell'area di studio pre e post incendio, evidenziando le variazioni della copertura vegetale e le aree percorse dal fuoco, che appaiono con tonalità più scure o brunaste. A due anni dall'evento, si osserva un parziale ripristino delle tonalità verdi in alcune porzioni dell'area, segnale della rigenerazione della vegetazione e in altre zone invece un recupero incompleto.   
-
-### Composizione RGB a falsi colori
-Sostituendo il NIR al posto della banda del rosso, si evidenziano le zone di vegetazione (rosso). Queste immagini permettono di osservare lo stato di salute della vegetazione, poichè una maggiore riflessione del NIR indica una vegetazione sana che apparità con un rosso più intenso, rispetto invece a una vegetazione danneggiata e sottoposta a stress.
-
-```r
-im.multiframe(1, 3)   #suddivisione della finestra grafica in 1 riga e 3 colonne
-plotRGB(pre, r = 4, g = 3, b = 2, stretch = "lin", main = "Pre-incendio")
-plotRGB(post, r = 4, g = 3, b = 2, stretch = "lin", main = "Post-incendio")
-plotRGB(post2024, r = 4, g = 3, b = 2, stretch = "lin", main = "Due anni dopo")
-dev.off() 
-```
-
-<img width="800" height="600" alt="falsecolor" src="https://github.com/user-attachments/assets/15340150-1326-45c6-8a7f-4c105f9efaeb" />
-
 
 ### Visualizzazione delle singole bande del visibile (B2, B3, B4) e del vicino infrarosso (B8)
 
@@ -136,6 +98,37 @@ dev.off()
 
 La visualizzazione separata delle bande del visibile (blu, verde e rosso) e della banda del vicino infrarosso (NIR) consente di analizzare le modifiche della risposta spettrale delle diverse superfici nelle tre fasi analizzate. In particolare, osservando la banda del NIR, sensibile alla presenza e allo stato di salute della vegetazione, si nota una diminuzione della riflettanza, in seguito all'incendio e una ripresa due anni dopo. 
 
+
+### Composizione RGB a colori naturali 
+```r
+# Suddivisione della finestra grafica in 1 riga e 3 colonne
+im.multiframe(1, 3)
+
+# Visualizzazione a colori naturali con schema RGB (B4=Red=layer3, B3=Green=layer2, B2=Blu=layer1)
+plotRGB(pre, r = 3, g = 2, b = 1, stretch = "lin", main = "Pre-incendio")
+plotRGB(post, r = 3, g = 2, b = 1, stretch = "lin", main = "Post-incendio")
+plotRGB(post2024, r = 3, g = 2, b = 1, stretch = "lin", main = "Due anni dopo")
+
+# Chiusura finestra grafica corrente
+dev.off() 
+```
+
+<img width="800" height="600" alt="RGB" src="https://github.com/user-attachments/assets/9fd92b2b-e275-446a-bf95-eb5348dc1d85" />
+
+La composizione RGB a colori naturali permette di effettuare un primo confronto qualitativo tra le condizioni dell'area di studio pre e post incendio, evidenziando le variazioni della copertura vegetale e le aree percorse dal fuoco, che appaiono con tonalità più scure o brunaste. A due anni dall'evento, si osserva un parziale ripristino delle tonalità verdi in alcune porzioni dell'area, segnale della rigenerazione della vegetazione e in altre zone invece un recupero incompleto.   
+
+### Composizione RGB a falsi colori
+Sostituendo il NIR al posto della banda del rosso, si evidenziano le zone di vegetazione (rosso). Queste immagini permettono di osservare lo stato di salute della vegetazione, poichè una maggiore riflessione del NIR indica una vegetazione sana che apparità con un rosso più intenso, rispetto invece a una vegetazione danneggiata e sottoposta a stress.
+
+```r
+im.multiframe(1, 3)   #suddivisione della finestra grafica in 1 riga e 3 colonne
+plotRGB(pre, r = 4, g = 3, b = 2, stretch = "lin", main = "Pre-incendio")
+plotRGB(post, r = 4, g = 3, b = 2, stretch = "lin", main = "Post-incendio")
+plotRGB(post2024, r = 4, g = 3, b = 2, stretch = "lin", main = "Due anni dopo")
+dev.off() 
+```
+
+<img width="800" height="600" alt="falsecolor" src="https://github.com/user-attachments/assets/15340150-1326-45c6-8a7f-4c105f9efaeb" />
 
 ### Analisi DVI 🌱
 
