@@ -88,9 +88,6 @@ plot(post2024[[1]], col = magma(100), main = "Due anni dopo, B2")
 plot(post2024[[2]], col = magma(100), main = "Due anni dopo, B3")
 plot(post2024[[3]], col = magma(100), main = "Due anni dopo, B4")
 plot(post2024[[4]], col = magma(100), main = "Due anni dopo, B8")
-dev.off()
-
-dev.off()
 ```
 
 <img width="800" height="800" alt="singole bande" src="https://github.com/user-attachments/assets/f4bfaaa6-9bc1-4585-a326-3b794be172b9" />
@@ -106,10 +103,7 @@ im.multiframe(1, 3)
 # Visualizzazione a colori naturali con schema RGB (B4=Red=layer3, B3=Green=layer2, B2=Blu=layer1)
 plotRGB(pre, r = 3, g = 2, b = 1, stretch = "lin", main = "Pre-incendio")
 plotRGB(post, r = 3, g = 2, b = 1, stretch = "lin", main = "Post-incendio")
-plotRGB(post2024, r = 3, g = 2, b = 1, stretch = "lin", main = "Due anni dopo")
-
-# Chiusura finestra grafica corrente
-dev.off() 
+plotRGB(post2024, r = 3, g = 2, b = 1, stretch = "lin", main = "Due anni dopo") 
 ```
 
 <img width="800" height="600" alt="RGB" src="https://github.com/user-attachments/assets/9fd92b2b-e275-446a-bf95-eb5348dc1d85" />
@@ -124,7 +118,6 @@ im.multiframe(1, 3)   #suddivisione della finestra grafica in 1 riga e 3 colonne
 plotRGB(pre, r = 4, g = 3, b = 2, stretch = "lin", main = "Pre-incendio")
 plotRGB(post, r = 4, g = 3, b = 2, stretch = "lin", main = "Post-incendio")
 plotRGB(post2024, r = 4, g = 3, b = 2, stretch = "lin", main = "Due anni dopo")
-dev.off() 
 ```
 
 <img width="800" height="600" alt="falsecolor" src="https://github.com/user-attachments/assets/15340150-1326-45c6-8a7f-4c105f9efaeb" />
@@ -151,7 +144,6 @@ im.multiframe(1, 3)   #suddivisione della finestra grafica in 1 riga e 3 colonne
 plot(dvi_pre, col = cividis(100), main = "DVI luglio 2022")
 plot(dvi_post, col = cividis(100), main = "DVI agosto 2022")
 plot(dvi_post2024, col = cividis(100), main = "DVI agosto 2024")
-dev.off()
 ```
 
 <img width="800" height="600" alt="ndvi" src="https://github.com/user-attachments/assets/2451bd49-7161-4e24-aaf7-d47ad2c8e484" />
@@ -183,7 +175,6 @@ im.multiframe(1, 3)   #suddivisione della finestra grafica in 1 riga e 3 colonne
 plot(ndvi_pre, col = inferno(100), main = "NDVI luglio 2022")
 plot(ndvi_post, col = inferno(100), main = "NDVI agosto 2022")
 plot(ndvi_post2024, col = inferno(100), main = "NDVI agosto 2024")
-dev.off()
 ```
 
 <img width="800" height="600" alt="ndvi" src="https://github.com/user-attachments/assets/26520721-5be4-423d-9c34-b117a2538dd6" />
@@ -201,7 +192,6 @@ im.multiframe(1, 3)   #suddivisione finestra grafica in 1 riga e 3 colonne
 plot(ndvi_diff1, col = inferno(100), main = "agosto2022 - luglio2022")
 plot(ndvi_diff2, col = inferno(100), main = "agosto2024 - agosto2022")
 plot(ndvi_diff3, col = inferno(100), main = "agosto2024 - luglio2022")
-dev.off()
 ```
 
 <img width="800" height="600" alt="difndvi" src="https://github.com/user-attachments/assets/da98e4a5-e980-4aef-9851-2b8a80a99d10" />
@@ -266,7 +256,6 @@ legend("bottomleft",            #posizione della legenda in basso a sinistra
        title = "Classe"         #titolo delle legenda
        bg = "white",            #impostazione del colore dello sfondo
        xpd = TRUE)              #la legenda può essere disegnata fuori dall'area del grafico
-dev.off()
 ```
 
 <img width="800" height="600" alt="mappe" src="https://github.com/user-attachments/assets/9becd714-2dea-41ed-a4ac-7c1b5d753d32" />
