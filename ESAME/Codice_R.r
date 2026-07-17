@@ -8,7 +8,6 @@ library(terra)      # Gestione, elaborazione e analisi dei dati raster
 library(imageRy)    # Visualizzazione ed elaborazione di immagini raster
 library(viridis)    # Palette di colori per grafici 
 library(ggplot2)    # Creazione di grafici personalizzati
-library(ggridges)   # Realizzazione di ridgline plot per il confronto di distribuzioni
 library(patchwork)  # Combinazione di più grafici in un'unica figura
 
 # Importazione e visualizzazione dei dati raster Sentinel - 2
